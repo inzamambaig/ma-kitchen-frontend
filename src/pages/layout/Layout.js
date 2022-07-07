@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Dashboard from "../../pages/dashnoard/Dashboard";
 import Home from "../../pages/home/Home";
 import Customer from "../../pages/customer/Customers";
@@ -29,15 +29,16 @@ export default function Layout() {
     <>
       <Box className={classes.wrapper}>
         <Routes>
-          {/* <Route exact path="/Login" element={<Login />} /> */}
-          {/* <Route path="/Signup" element={<Signup />} /> */}
-          <Route path="/Dashboard" element={<Dashboard />} />
-          <Route path="/Home" element={<Home />} />
-          <Route path="/Customers" element={<Customer />} />
-          <Route path="/Order" element={<Order />} />
-          <Route path="/Delivery" element={<Delivery />} />
-          <Route path="/Menu" element={<Menu />} />
-          <Route path="/DropdownMenu" element={<DropdownMenu />} />
+          <Route index path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/customers" element={<Customer />} />
+          <Route path="/order" element={<Order />} />
+          <Route path="/delivery" element={<Delivery />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/dropdownMenu" element={<DropdownMenu />} />
         </Routes>
       </Box>
     </>

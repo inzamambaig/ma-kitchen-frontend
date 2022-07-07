@@ -1,11 +1,12 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import bgImage from "../../../assest/Image/HomeChef/bg.png";
+import bgImage from "../../../assest/Image/HomeChef/bgImage.jpg";
 import { Button, Grid, Typography } from "@material-ui/core";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import logo from "../../../assest/Image/HomeChef/logo.png";
 import RadioButton from "../../../components/radiobutton/RadioButton";
+import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -19,6 +20,9 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     // alignItems: "center",
     backgroundPosition: "center center",
+    [theme.breakpoints.down("xs")]: {
+      position: "relative",
+    },
   },
 
   errorMessage: {
@@ -100,12 +104,33 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "12px",
   },
   ContainerBox: {
-    display: "flex",
-    justifyContent: "center",
     alignItems: "center",
     color: theme.palette.common.white,
+    background: "radial-gradient(#00000054, #2a212166)",
+    // height: "100%",
   },
-  para: {},
+  headingOne: {
+    fontFamily: "inherit",
+    fontStyle: "normal",
+    fontWeight: "600",
+    fontSize: "60px",
+    lineHeight: "55px",
+  },
+  para: {
+    margin: "75px",
+    marginRight: "0px",
+    [theme.breakpoints.down("xs")]: {
+      margin: "15px",
+    },
+  },
+  paragraph: {
+    fontFamily: "inherit",
+    fontStyle: "normal",
+    fontWeight: "400",
+    fontSize: "19px",
+    lineHeight: "30px",
+    /* or 125% */
+  },
 }));
 
 const SignupSchema = Yup.object().shape({
@@ -154,6 +179,9 @@ const SignupSchema = Yup.object().shape({
 
 export default function HomeChefSignUp() {
   const classes = useStyles();
+
+  let navigate = useNavigate();
+
   return (
     <>
       <div className={classes.container}>
@@ -161,8 +189,10 @@ export default function HomeChefSignUp() {
           <Grid container className={classes.ContainerBox} spacing={3}>
             <Grid item xs={12} sm={12} lg={5}>
               <div className={classes.para}>
-                <h2>Unlock a new revenue stream</h2>
-                <p>
+                <h1 className={classes.headingOne}>
+                  Unlock a new revenue stream
+                </h1>
+                <p className={classes.paragraph}>
                   Ma Kitchen platform gives you the flexibility, visibility and
                   customer insights you need to connect with more customers.
                   Partner with us today.
@@ -371,10 +401,12 @@ export default function HomeChefSignUp() {
                           <Button
                             type="submit"
                             className={classes.SubmitButton}
+                            onClick={() => {
+                              navigate("/");
+                            }}
                           >
                             Submit
                           </Button>
-                          {/* <button>Submit</button> */}
                         </Form>
                       )}
                     </Formik>

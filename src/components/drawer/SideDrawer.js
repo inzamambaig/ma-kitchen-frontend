@@ -19,6 +19,7 @@ import DashboardIcon from "@material-ui/icons/Dashboard";
 import { NavLink } from "react-router-dom";
 import HomeIcon from "@material-ui/icons/Home";
 import Layout from "../../pages/layout/Layout";
+
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -121,12 +122,12 @@ export default function SideDrawer({ children }) {
   const [open, setOpen] = React.useState(false);
 
   const ItemDate = [
-    { lable: "Dashboard", link: "/Dashboard", icon: <DashboardIcon /> },
-    { lable: "Home Chef", link: "/Home", icon: <HomeIcon /> },
-    { lable: "Customers", link: "/Customers", icon: <DashboardIcon /> },
-    { lable: "Order", link: "/Order", icon: <DashboardIcon /> },
-    { lable: "Delivery", link: "/Delivery", icon: <DashboardIcon /> },
-    { lable: "Menu", link: "/Menu", icon: <DashboardIcon /> },
+    { lable: "Dashboard", link: "/dashboard", icon: <DashboardIcon /> },
+    { lable: "Home Chef", link: "/home", icon: <HomeIcon /> },
+    { lable: "Customers", link: "/customers", icon: <DashboardIcon /> },
+    { lable: "Order", link: "/order", icon: <DashboardIcon /> },
+    { lable: "Delivery", link: "/delivery", icon: <DashboardIcon /> },
+    { lable: "Menu", link: "/menu", icon: <DashboardIcon /> },
   ];
 
   const handleDrawerOpen = () => {

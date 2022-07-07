@@ -1,11 +1,12 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import bgImage from "../../../assest/Image/HomeChef/bg.png";
-import { Button, Typography } from "@material-ui/core";
+import { Button, Link, Typography } from "@material-ui/core";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import logo from "../../../assest/Image/HomeChef/logo.png";
 import RadioButton from "../../../components/radiobutton/RadioButton";
+import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -38,6 +39,9 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: "400px",
     margin: "auto",
     borderRadius: "12px",
+    [theme.breakpoints.down("xs")]: {
+      backdropFilter: "blur(5.5px)",
+    },
   },
 
   heading: {
@@ -49,6 +53,7 @@ const useStyles = makeStyles((theme) => ({
   },
   FormikLoginForm: {
     padding: " 3px 20px",
+    textAlign: "start",
   },
   Input: {
     width: "95%",
@@ -84,6 +89,11 @@ const useStyles = makeStyles((theme) => ({
   ForgetPass: {
     color: theme.palette.common.blue,
   },
+  SignUpButton: {
+    fontFamily: "inherit",
+    fontSize: "13px",
+    color: theme.palette.common.white,
+  },
 }));
 
 const SignupSchema = Yup.object().shape({
@@ -96,6 +106,7 @@ const SignupSchema = Yup.object().shape({
 
 export default function HomeChefLogin() {
   const classes = useStyles();
+  let navigate = useNavigate();
   return (
     <>
       <div className={classes.container}>
@@ -151,7 +162,7 @@ export default function HomeChefLogin() {
                       <div className={classes.checkout}>
                         <span className={classes.radioBox}>
                           <RadioButton />
-                          Keep me Login
+                          Stay Signed In
                         </span>
                         <span className={classes.ForgetPass}>
                           Forget Password
@@ -160,7 +171,17 @@ export default function HomeChefLogin() {
                       <Button type="submit" className={classes.SubmitButton}>
                         Submit
                       </Button>
-                      {/* <button>Submit</button> */}
+                      <span className={classes.SignUpButton}>
+                        Start Your Business?{" "}
+                        <span
+                          className={classes.ForgetPass}
+                          onClick={() => {
+                            navigate("/signup");
+                          }}
+                        >
+                          Create an account
+                        </span>
+                      </span>
                     </Form>
                   )}
                 </Formik>
