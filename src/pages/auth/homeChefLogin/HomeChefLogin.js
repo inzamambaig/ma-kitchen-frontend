@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import bgImage from "../../../assest/Image/HomeChef/bg.png";
 import { Button, Link, Typography } from "@material-ui/core";
@@ -7,6 +7,8 @@ import * as Yup from "yup";
 import logo from "../../../assest/Image/HomeChef/logo.png";
 import RadioButton from "../../../components/radiobutton/RadioButton";
 import { useNavigate } from "react-router-dom";
+
+import validateChef from "../../../api/homechef/auth";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -105,8 +107,30 @@ const SignupSchema = Yup.object().shape({
 });
 
 export default function HomeChefLogin() {
+  const [loading, setLoading] = useState(false);
   const classes = useStyles();
   let navigate = useNavigate();
+
+  const handleLogin = async ({ email, password }) => {
+    if (loading) {
+      console.log("Loading...");
+    }
+
+    await validateChef(email, password)
+      .then((res) => {
+        const data = res.data;
+        if (data) {
+          setLoading(false);
+          console.log("data");
+          localStorage.setItem("token", data.token);
+          // tokenization
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <>
       <div className={classes.container}>
@@ -130,9 +154,8 @@ export default function HomeChefLogin() {
                     email: "",
                   }}
                   validationSchema={SignupSchema}
-                  onSubmit={(values) => {
-                    // same shape as initial values
-                    console.log(values, "dasfas");
+                  onSubmit={async (values) => {
+                    await handleLogin(values);
                   }}
                 >
                   {({ errors, touched }) => (
