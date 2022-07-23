@@ -6,6 +6,7 @@ import { Button, Typography } from "@material-ui/core";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import logo from "../../../assest/Image/logo.png";
+import Config from "../../../config/Config";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -73,10 +74,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const SignupSchema = Yup.object().shape({
-  password: Yup.string()
-    .min(2, "Too Short!")
-    .max(50, "Too Long!")
-    .required("password is Required"),
+  password: Yup.string().min(2, "Too Short!").max(50, "Too Long!"),
+  // .required("password is Required"),
   email: Yup.string().email("Invalid email").required(" Email is Required"),
 });
 
@@ -137,21 +136,21 @@ export default function Login() {
                         type="email"
                         placeholder="Email"
                       />
-                      {errors.email && touched.email ? (
+                      {/* {errors.email && touched.email ? (
                         <div className={classes.errorMessage}>
                           {errors.email}
                         </div>
-                      ) : null}
+                      ) : null} */}
                       <Field
                         className={classes.input}
                         name="password"
                         placeholder="Password"
                       />
-                      {errors.password && touched.password ? (
+                      {/* {errors.password && touched.password ? (
                         <div className={classes.errorMessage}>
                           {errors.password}
                         </div>
-                      ) : null}
+                      ) : null} */}
                       <br />
                       <button type="submit">Submit</button>
                     </Form>

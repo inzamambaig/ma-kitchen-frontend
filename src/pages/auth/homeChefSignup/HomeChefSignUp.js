@@ -401,9 +401,9 @@ export default function HomeChefSignUp() {
                           <Button
                             type="submit"
                             className={classes.SubmitButton}
-                            onClick={() => {
-                              navigate("/");
-                            }}
+                            // onClick={() => {
+                            //   navigate("/");
+                            // }}
                           >
                             Submit
                           </Button>
