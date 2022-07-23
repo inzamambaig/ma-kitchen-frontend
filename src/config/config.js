@@ -6,7 +6,7 @@ const PROD = "https://ma-kitchen.herokuapp.com/";
 const DEV = "http://localhost:3000/";
 
 // Check to see if prod or dev is in use
-const isProduction = false;
+const isProduction = true;
 
 const SERVER_URL = isProduction ? PROD : DEV;
 
