@@ -3,7 +3,6 @@ import wrapper from "../../api/api";
 
 const validateChef = async (email, password) => {
   const { LOGIN } = auth;
-  // console.log(LOGIN);
   return await wrapper
     .post(LOGIN, { email, password })
     .then((res) => {

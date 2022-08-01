@@ -1,37 +1,41 @@
-import wrapper from "../api";
 import { auth } from "../../config/routes";
+import wrapper from "../../api/api";
 
-const Signup = async (
-  firstname,
-  lastname,
+const createChef = async (
+  firstName,
+  lastName,
   email,
   password,
-  confirmpass,
-  employees,
-  kitchenname,
+  confirmPassword,
+  phone,
+  kitchenName,
+  totalEmployees,
   city,
-  state,
   postalcode,
-  address,
-  country
+  state,
+  country,
+  address
 ) => {
+  const { SIGNUP } = auth;
+
   return await wrapper
-    .post(auth.SIGNUP, {
-      firstName: firstname,
-      lastName: lastname,
+    .post(SIGNUP, {
+      firstName: firstName,
+      lastName: lastName,
       email: email,
       password: password,
-      confirmpass: confirmpass,
-      employees: employees,
-      kitchenname: kitchenname,
+      confirmPassword: confirmPassword,
+      phone: phone,
+      kitchenName: kitchenName,
+      totalEmployees: totalEmployees,
       city: city,
-      state: state,
       postalcode: postalcode,
-      address: address,
+      state: state,
       country: country,
+      address: address,
     })
     .then((res) => res)
-    .catch((err) => console.log(err));
+    .catch((err) => err);
 };
 
-export default Signup;
+export default createChef;

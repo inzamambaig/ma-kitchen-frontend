@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import bgImage from "../../../assest/Image/HomeChef/bg.png";
-import { Button, Link, Typography } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import logo from "../../../assest/Image/HomeChef/logo.png";
-import RadioButton from "../../../components/radiobutton/RadioButton";
 import { useNavigate } from "react-router-dom";
 
 import validateChef from "../../../api/homechef/auth";
@@ -48,10 +47,18 @@ const useStyles = makeStyles((theme) => ({
 
   heading: {
     marginBottom: "0px",
-    color: theme.palette.common.white,
+    fontStyle: "normal",
+    fontWeight: 600,
+    fontSize: "36px",
+    color: "#FFFFFF",
+    lineHeight: "44px",
   },
   SubTitle: {
     color: theme.palette.common.white,
+    fontStyle: "normal",
+    fontWeight: 400,
+    fontSize: "18px",
+    lineHeight: "29px",
   },
   FormikLoginForm: {
     padding: " 3px 20px",
@@ -64,7 +71,23 @@ const useStyles = makeStyles((theme) => ({
     outline: "none",
     border: "1px solid #80808069",
     paddingLeft: "16px",
-    marginTop: "15px",
+    marginBottom: "20px",
+  },
+  Password: {
+    width: "95%",
+    padding: "12px 0px",
+    borderRadius: "2px",
+    outline: "none",
+    border: "1px solid #80808069",
+    paddingLeft: "16px",
+    marginBottom: "7px",
+  },
+  Label: {
+    color: theme.palette.common.white,
+    fontStyle: "normal",
+    fontWeight: 600,
+    fontSize: "18px",
+    lineHeight: "25px",
   },
   SubmitButton: {
     backgroundColor: "#e87906",
@@ -76,6 +99,7 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       backgroundColor: "#e87906",
     },
+    marginTop: "25px",
   },
   checkout: {
     display: "flex",
@@ -88,12 +112,23 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     color: theme.palette.common.white,
   },
-  ForgetPass: {
+  Checkbox: {
+    marginLeft: "0",
+  },
+  ForgotPass: {
     color: theme.palette.common.blue,
+    cursor: "pointer",
+    fontStyle: "normal",
+    fontWeight: "400",
+    fontSize: "13px",
+    lineHeight: "14px",
   },
   SignUpButton: {
     fontFamily: "inherit",
     fontSize: "13px",
+    fontStyle: "normal",
+    fontWeight: "400",
+    lineHeight: "14px",
     color: theme.palette.common.white,
   },
 }));
@@ -160,21 +195,23 @@ export default function HomeChefLogin() {
                 >
                   {({ errors, touched }) => (
                     <Form className={classes.FormikLoginForm}>
+                      <label className={classes.Label}>Email</label>
                       <Field
                         className={classes.Input}
                         name="email"
                         type="email"
-                        placeholder="Email"
+                        placeholder="john@example.com"
                       />
                       {/* {errors.email && touched.email ? (
                         <div className={classes.errorMessage}>
                           {errors.email}
                         </div>
                       ) : null} */}
+                      <label className={classes.Label}>Password</label>
                       <Field
-                        className={classes.Input}
+                        className={classes.Password}
                         name="password"
-                        placeholder="Password"
+                        placeholder="password"
                       />
                       {/* {errors.password && touched.password ? (
                         <div className={classes.errorMessage}>
@@ -184,11 +221,11 @@ export default function HomeChefLogin() {
                       <br />
                       <div className={classes.checkout}>
                         <span className={classes.radioBox}>
-                          <RadioButton />
+                          <input type="checkbox" className={classes.Checkbox} />
                           Stay Signed In
                         </span>
-                        <span className={classes.ForgetPass}>
-                          Forget Password
+                        <span className={classes.ForgotPass}>
+                          Forgot Password?
                         </span>
                       </div>
                       <Button type="submit" className={classes.SubmitButton}>
@@ -197,7 +234,7 @@ export default function HomeChefLogin() {
                       <span className={classes.SignUpButton}>
                         Start Your Business?{" "}
                         <span
-                          className={classes.ForgetPass}
+                          className={classes.ForgotPass}
                           onClick={() => {
                             navigate("/signup");
                           }}

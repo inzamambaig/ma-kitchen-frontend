@@ -1,9 +1,9 @@
 // import SERVER_URL from "./config";
-import SERVER_URL from "./Config";
+import SERVER_URL from "./config";
 
 // Services
 const HOMECHEF = `${SERVER_URL}api/v1/chefs/`;
-const MENU = `${SERVER_URL}api/v1/menu`;
+// const MENU = `${SERVER_URL}api/v1/menu`;
 
 // Slugs
 // HOMECHEFS
@@ -12,11 +12,11 @@ const MENU = `${SERVER_URL}api/v1/menu`;
 //Users
 export const auth = {
   LOGIN: `${HOMECHEF}login`,
-  SIGNUP: `${HOMECHEF}signup`,
+  SIGNUP: `${HOMECHEF}`,
 };
 
 // MENUS
-const CREATE = `${MENU}`;
-const GET = `${MENU}`;
-const UPDATE = `${MENU}`;
-const DELETE = `${MENU}`;
+// const CREATE = `${MENU}`;
+// const GET = `${MENU}`;
+// const UPDATE = `${MENU}`;
+// const DELETE = `${MENU}`;
