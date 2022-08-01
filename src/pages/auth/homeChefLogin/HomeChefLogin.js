@@ -176,11 +176,11 @@ export default function HomeChefLogin() {
                         name="password"
                         placeholder="Password"
                       />
-                      {errors.password && touched.password ? (
+                      {/* {errors.password && touched.password ? (
                         <div className={classes.errorMessage}>
                           {errors.password}
                         </div>
-                      ) : null}
+                      ) : null} */}
                       <br />
                       <div className={classes.checkout}>
                         <span className={classes.radioBox}>
@@ -192,7 +192,7 @@ export default function HomeChefLogin() {
                         </span>
                       </div>
                       <Button type="submit" className={classes.SubmitButton}>
-                        Submit
+                        Next
                       </Button>
                       <span className={classes.SignUpButton}>
                         Start Your Business?{" "}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import bgImage from "../../../assest/Image/HomeChef/bgImage.jpg";
 import { Button, Grid, Typography } from "@material-ui/core";
@@ -7,6 +7,8 @@ import * as Yup from "yup";
 import logo from "../../../assest/Image/HomeChef/logo.png";
 import RadioButton from "../../../components/radiobutton/RadioButton";
 import { useNavigate } from "react-router-dom";
+
+import Signup from "../../../api/homechef/Signup";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -93,7 +95,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-between",
     marginRight: "11px",
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("sm")]: {
       display: "block",
     },
   },
@@ -135,43 +137,43 @@ const useStyles = makeStyles((theme) => ({
 
 const SignupSchema = Yup.object().shape({
   country: Yup.string()
-    .min(2, "Too Short!")
+    .min(1, "Too Short!")
     .max(50, "Too Long!")
     .required("Add state Name"),
   state: Yup.string()
-    .min(2, "Too Short!")
+    .min(1, "Too Short!")
     .max(50, "Too Long!")
     .required("Add state Name"),
   employees: Yup.string()
-    .min(2, "Too Short!")
+    .min(1, "Too Short!")
     .max(50, "Too Long!")
     .required("Add Employees Name"),
   kitchenname: Yup.string()
-    .min(2, "Too Short!")
+    .min(1, "Too Short!")
     .max(50, "Too Long!")
     .required(" Add Kitchen Name"),
   postalcode: Yup.string()
-    .min(2, "Too Short!")
+    .min(1, "Too Short!")
     .max(50, "Too Long!")
     .required("Add Employees Name"),
   city: Yup.string()
-    .min(2, "Too Short!")
+    .min(1, "Too Short!")
     .max(50, "Too Long!")
     .required(" Add Kitchen Name"),
   confirmpass: Yup.string()
-    .min(2, "Too Short!")
+    .min(1, "Too Short!")
     .max(50, "Too Long!")
     .required("confirm pass is Required"),
   password: Yup.string()
-    .min(2, "Too Short!")
+    .min(1, "Too Short!")
     .max(50, "Too Long!")
     .required("password is Required"),
   lastname: Yup.string()
-    .min(2, "Too Short!")
+    .min(1, "Too Short!")
     .max(50, "Too Long!")
     .required("lastname is Required"),
   firstname: Yup.string()
-    .min(2, "Too Short!")
+    .min(1, "Too Short!")
     .max(50, "Too Long!")
     .required("firstname is Required"),
   email: Yup.string().email("Invalid email").required(" Email is Required"),
@@ -179,8 +181,54 @@ const SignupSchema = Yup.object().shape({
 
 export default function HomeChefSignUp() {
   const classes = useStyles();
-
+  const [loading, setLoading] = useState(false);
   let navigate = useNavigate();
+
+  const handleSignup = async ({
+    firstname,
+    lastname,
+    email,
+    password,
+    confirmpass,
+    employees,
+    kitchenname,
+    city,
+    state,
+    postalcode,
+    address,
+    country,
+  }) => {
+    if (loading) {
+      console.log(" its Loading...");
+    }
+
+    await Signup(
+      firstname,
+      lastname,
+      email,
+      password,
+      confirmpass,
+      employees,
+      kitchenname,
+      city,
+      state,
+      postalcode,
+      address,
+      country
+    )
+      .then((res) => {
+        const data = res.data;
+        if (data) {
+          setLoading(false);
+          console.log("data");
+          localStorage.setItem("token", data.token);
+          // tokenization
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <>
@@ -234,7 +282,8 @@ export default function HomeChefSignUp() {
                         confirmpass: "",
                       }}
                       validationSchema={SignupSchema}
-                      onSubmit={(values) => {
+                      onSubmit={async (values) => {
+                        await handleSignup(values);
                         // same shape as initial values
                         console.log(values, "dasfas");
                       }}
@@ -248,11 +297,11 @@ export default function HomeChefSignUp() {
                                 name="firstname"
                                 placeholder="firstname"
                               />
-                              {errors.firstname && touched.firstname ? (
+                              {/* {errors.firstname && touched.firstname ? (
                                 <div className={classes.errorMessage}>
                                   {errors.firstname}
                                 </div>
-                              ) : null}
+                              ) : null} */}
                             </Grid>
                             <Grid>
                               <Field
@@ -260,11 +309,11 @@ export default function HomeChefSignUp() {
                                 name="lastname"
                                 placeholder="Last Name"
                               />
-                              {errors.lastname && touched.lastname ? (
+                              {/* {errors.lastname && touched.lastname ? (
                                 <div className={classes.errorMessage}>
                                   {errors.lastname}
                                 </div>
-                              ) : null}
+                              ) : null} */}
                               <br />
                             </Grid>
                           </Grid>
@@ -275,11 +324,11 @@ export default function HomeChefSignUp() {
                               type="email"
                               placeholder="Email"
                             />
-                            {errors.email && touched.email ? (
+                            {/* {errors.email && touched.email ? (
                               <div className={classes.errorMessage}>
                                 {errors.email}
                               </div>
-                            ) : null}
+                            ) : null} */}
                           </Grid>
                           <Grid className={classes.email}>
                             <Field
@@ -287,11 +336,11 @@ export default function HomeChefSignUp() {
                               name="kitchenname"
                               placeholder="kitchen Name"
                             />
-                            {errors.kitchenname && touched.kitchenname ? (
+                            {/* {errors.kitchenname && touched.kitchenname ? (
                               <div className={classes.errorMessage}>
                                 {errors.kitchenname}
                               </div>
-                            ) : null}
+                            ) : null} */}
                           </Grid>
                           <Grid className={classes.email}>
                             <Field
@@ -299,11 +348,11 @@ export default function HomeChefSignUp() {
                               name="employees"
                               placeholder="Employees"
                             />
-                            {errors.employees && touched.employees ? (
+                            {/* {errors.employees && touched.employees ? (
                               <div className={classes.errorMessage}>
                                 {errors.employees}
                               </div>
-                            ) : null}
+                            ) : null} */}
                           </Grid>
                           <Grid className={classes.Detail}>
                             <Grid item>
@@ -312,11 +361,11 @@ export default function HomeChefSignUp() {
                                 name="password"
                                 placeholder="password"
                               />
-                              {errors.password && touched.password ? (
+                              {/* {errors.password && touched.password ? (
                                 <div className={classes.errorMessage}>
                                   {errors.password}
                                 </div>
-                              ) : null}
+                              ) : null} */}
                             </Grid>
                             <Grid>
                               <Field
@@ -324,11 +373,11 @@ export default function HomeChefSignUp() {
                                 name="confirmpass"
                                 placeholder="Confirm Password"
                               />
-                              {errors.confirmpass && touched.confirmpass ? (
+                              {/* {errors.confirmpass && touched.confirmpass ? (
                                 <div className={classes.errorMessage}>
                                   {errors.confirmpass}
                                 </div>
-                              ) : null}
+                              ) : null} */}
                               <br />
                             </Grid>
                           </Grid>
@@ -339,11 +388,11 @@ export default function HomeChefSignUp() {
                                 name="city"
                                 placeholder="City"
                               />
-                              {errors.city && touched.city ? (
+                              {/* {errors.city && touched.city ? (
                                 <div className={classes.errorMessage}>
                                   {errors.kitchenname}
                                 </div>
-                              ) : null}
+                              ) : null} */}
                             </Grid>
                             <Grid>
                               <Field
@@ -351,11 +400,11 @@ export default function HomeChefSignUp() {
                                 name="postalcode"
                                 placeholder="Postal code"
                               />
-                              {errors.postalcode && touched.postalcode ? (
+                              {/* {errors.postalcode && touched.postalcode ? (
                                 <div className={classes.errorMessage}>
                                   {errors.postalcode}
                                 </div>
-                              ) : null}
+                              ) : null} */}
                               <br />
                             </Grid>
                           </Grid>
@@ -366,11 +415,11 @@ export default function HomeChefSignUp() {
                                 name="state"
                                 placeholder="State"
                               />
-                              {errors.state && touched.state ? (
+                              {/* {errors.state && touched.state ? (
                                 <div className={classes.errorMessage}>
                                   {errors.state}
                                 </div>
-                              ) : null}
+                              ) : null} */}
                             </Grid>
                             <Grid>
                               <Field
@@ -378,11 +427,11 @@ export default function HomeChefSignUp() {
                                 name="country"
                                 placeholder="Country"
                               />
-                              {errors.country && touched.country ? (
+                              {/* {errors.country && touched.country ? (
                                 <div className={classes.errorMessage}>
                                   {errors.country}
                                 </div>
-                              ) : null}
+                              ) : null} */}
                               <br />
                             </Grid>
                           </Grid>
@@ -392,11 +441,11 @@ export default function HomeChefSignUp() {
                               name="address"
                               placeholder="Address"
                             />
-                            {errors.address && touched.address ? (
+                            {/* {errors.address && touched.address ? (
                               <div className={classes.errorMessage}>
                                 {errors.address}
                               </div>
-                            ) : null}
+                            ) : null} */}
                           </Grid>
                           <Button
                             type="submit"
