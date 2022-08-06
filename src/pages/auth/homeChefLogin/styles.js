@@ -129,4 +129,10 @@ export const useStyles = makeStyles((theme) => ({
     lineHeight: "14px",
     color: theme.palette.common.white,
   },
+  loader: {
+    position: "absolute",
+    left: "50%",
+    top: "50%",
+    transform: "translate(-50%, -50%)",
+  },
 }));

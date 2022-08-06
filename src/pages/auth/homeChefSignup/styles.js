@@ -24,7 +24,7 @@ export const useStyles = makeStyles((theme) => ({
     padding: 0,
   },
   card: {
-    margin: "20px",
+    margin: "7px",
   },
 
   wrapper: {
@@ -32,7 +32,7 @@ export const useStyles = makeStyles((theme) => ({
     boxShadow: " -3px 8px 7px 8px rgb(2 2 2 / 37%)",
     backdropFilter: "blur(8.5px)",
     // textAlign: "center",
-    padding: "8px 50px",
+    padding: "2px 50px",
     maxWidth: "405px",
     margin: "auto",
     borderRadius: "12px",
@@ -153,5 +153,31 @@ export const useStyles = makeStyles((theme) => ({
     fontSize: "19px",
     lineHeight: "30px",
     /* or 125% */
+  },
+  account: {
+    display: "flex",
+    justifyContent: "center",
+  },
+  accountText: {
+    fontStyle: "normal",
+    fontWeight: "300",
+    fontSize: "12px",
+    lineHeight: "14px",
+    color: theme.palette.common.white,
+  },
+  linkText: {
+    fontStyle: "normal",
+    fontWeight: "500",
+    fontSize: "14px",
+    lineHeight: "14px",
+    color: theme.palette.common.secondary.main,
+    marginLeft: "10px",
+    textDecoration: "none",
+  },
+  loader: {
+    position: "absolute",
+    left: "50%",
+    top: "50%",
+    transform: "translate(-50%, -50%)",
   },
 }));

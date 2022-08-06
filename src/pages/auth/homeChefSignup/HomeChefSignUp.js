@@ -1,116 +1,40 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate, Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import { Formik, Form, Field } from "formik";
-import * as Yup from "yup";
 import { Button, Grid } from "@material-ui/core";
-import CountryCodes from "./CountryCodes";
+import { Oval } from "react-loader-spinner";
 import logo from "../../../assest/Image/HomeChef/logo.png";
-import createChef from "../../../api/homechef/Signup";
 import { useStyles } from "./styles";
 import Country from "./Country";
-
-const SignupSchema = Yup.object().shape({
-  firstname: Yup.string()
-    .min(1, "Too Short!")
-    .max(50, "Too Long!")
-    .required("firstname is Required"),
-  lastname: Yup.string()
-    .min(1, "Too Short!")
-    .max(50, "Too Long!")
-    .required("lastname is Required"),
-  email: Yup.string().email("Invalid email").required(" Email is Required"),
-  password: Yup.string()
-    .min(1, "Too Short!")
-    .max(50, "Too Long!")
-    .required("password is Required"),
-  phone: Yup.string()
-    .min(7, "Too Short!")
-    .max(30, "Too Long!")
-    .required("Phone is required"),
-  confirmpass: Yup.string()
-    .min(1, "Too Short!")
-    .max(50, "Too Long!")
-    .required("confirm pass is Required"),
-  kitchenname: Yup.string()
-    .min(1, "Too Short!")
-    .max(50, "Too Long!")
-    .required(" Add Kitchen Name"),
-  employees: Yup.string()
-    .min(1, "Too Short!")
-    .max(50, "Too Long!")
-    .required("Add Employees Name"),
-  city: Yup.string()
-    .min(1, "Too Short!")
-    .max(50, "Too Long!")
-    .required(" Add Kitchen Name"),
-  postalcode: Yup.string()
-    .min(1, "Too Short!")
-    .max(50, "Too Long!")
-    .required("Add Employees Name"),
-  state: Yup.string()
-    .min(1, "Too Short!")
-    .max(50, "Too Long!")
-    .required("Add state Name"),
-  country: Yup.string()
-    .min(1, "Too Short!")
-    .max(50, "Too Long!")
-    .required("Add state Name"),
-  address: Yup.string()
-    .min(2, "Too Short!")
-    .max(150, "Too Long!")
-    .required("Address is Required"),
-});
+import CountryCodes from "./CountryCodes";
+import { createChef, reset } from "../../../features/chef/authSlice";
+import { SignupSchema } from "./SignupSchema";
 
 export default function HomeChefSignUp() {
   const classes = useStyles();
-  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const handleSignup = async ({
-    firstname,
-    lastname,
-    email,
-    password,
-    confirmpass,
-    phone,
-    kitchenname,
-    employees,
-    city,
-    postalcode,
-    state,
-    country,
-    address,
-  }) => {
-    setLoading(true);
-    if (loading) {
-      console.log(" its Loading...");
+  const { chef, isLoading, isError, isSuccess, message } = useSelector(
+    (state) => state.auth
+  );
+
+  useEffect(() => {
+    if (isError) {
+      toast.error(message);
     }
 
-    await createChef(
-      firstname,
-      lastname,
-      email,
-      password,
-      confirmpass,
-      phone,
-      kitchenname,
-      employees,
-      city,
-      postalcode,
-      state,
-      country,
-      address
-    )
-      .then((res) => {
-        const data = res.data;
-        if (data) {
-          setLoading(false);
-          console.log("data");
-          localStorage.setItem("token", data.token);
-          // tokenization
-        }
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
+    if (isSuccess || chef) {
+      navigate("/dashboard");
+    }
+
+    dispatch(reset());
+  }, [chef, isError, isSuccess, message, navigate, dispatch]);
+
+  const handleSignup = async (values) => {
+    await dispatch(createChef(values));
   };
 
   return (
@@ -140,6 +64,14 @@ export default function HomeChefSignUp() {
                       alt="login-logo"
                       width={"150px"}
                     />
+                    <div className={classes.account}>
+                      <span className={classes.accountText}>
+                        Already have an account?
+                        <Link to="/" className={classes.linkText}>
+                          Sign in
+                        </Link>
+                      </span>
+                    </div>
                     <h2 className={classes.heading}>
                       Get Started With Ma Kitchen
                     </h2>
@@ -251,7 +183,6 @@ export default function HomeChefSignUp() {
                                   classes.Input,
                                   classes.Country,
                                 ].join(" ")}
-                                defaultValue="92"
                               >
                                 <CountryCodes />
                               </Field>
@@ -354,7 +285,6 @@ export default function HomeChefSignUp() {
                                 ].join(" ")}
                                 name="country"
                                 placeholder="Country"
-                                defaultValue="Pakistan"
                               >
                                 <Country />
                               </Field>
@@ -383,9 +313,6 @@ export default function HomeChefSignUp() {
                           <Button
                             type="submit"
                             className={classes.SubmitButton}
-                            // onClick={() => {
-                            //   navigate("/");
-                            // }}
                           >
                             Submit
                           </Button>
@@ -404,6 +331,14 @@ export default function HomeChefSignUp() {
             </Grid>
           </Grid>
         </div>
+        {isLoading && (
+          <Oval
+            color="#F38828"
+            height={50}
+            width={50}
+            wrapperClass={classes.loader}
+          />
+        )}
       </div>
     </>
   );

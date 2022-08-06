@@ -5,7 +5,7 @@ import axios from "axios";
 
 // Getting JWT from localstorage
 export const getJWT = () => {
-  let homechef = localStorage.getItem("homechef-auth");
+  let homechef = localStorage.getItem("chef");
 
   if (homechef) {
     let token = localStorage.getItem(homechef.token);

@@ -1,40 +1,38 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import { Button } from "@material-ui/core";
 import { Formik, Form, Field } from "formik";
-import * as Yup from "yup";
+import { Oval } from "react-loader-spinner";
+import { toast } from "react-toastify";
 import logo from "../../../assest/Image/HomeChef/logo.png";
-import validateChef from "../../../api/homechef/auth";
 import { useStyles } from "./styles";
-
-const SignupSchema = Yup.object().shape({
-  email: Yup.string().email("Invalid email").required("Email is Required"),
-  password: Yup.string().required("Password is Required"),
-});
+import { LoginSchema } from "./LoginSchema";
+import { loginChef, reset } from "../../../features/chef/authSlice";
 
 export default function HomeChefLogin() {
-  const [loading, setLoading] = useState(false);
   const classes = useStyles();
   let navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const handleLogin = async ({ email, password }) => {
-    setLoading(true);
+  const { chef, isLoading, isError, isSuccess, message } = useSelector(
+    (state) => state.auth
+  );
 
-    if (loading) {
-      console.log("Loading....");
+  useEffect(() => {
+    if (isError) {
+      toast.error(message);
     }
 
-    await validateChef(email, password)
-      .then((res) => {
-        const data = res;
-        if (data) {
-          setLoading(false);
-          localStorage.setItem("token", data.token);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    if (isSuccess || chef) {
+      navigate("/dashboard");
+    }
+
+    dispatch(reset());
+  }, [chef, isError, isSuccess, message, navigate, dispatch]);
+
+  const handleLogin = async (values) => {
+    await dispatch(loginChef(values));
   };
 
   return (
@@ -60,7 +58,7 @@ export default function HomeChefLogin() {
                     email: "",
                     signedin: false,
                   }}
-                  validationSchema={SignupSchema}
+                  validationSchema={LoginSchema}
                   onSubmit={async (values) => {
                     await handleLogin(values);
                   }}
@@ -128,6 +126,14 @@ export default function HomeChefLogin() {
             </div>
           </div>
         </div>
+        {isLoading && (
+          <Oval
+            color="#F38828"
+            height={50}
+            width={50}
+            wrapperClass={classes.loader}
+          />
+        )}
       </div>
     </>
   );
