@@ -5,10 +5,10 @@ import { Button } from "@material-ui/core";
 import { Formik, Form, Field } from "formik";
 import { Oval } from "react-loader-spinner";
 import { toast } from "react-toastify";
-import logo from "../../../assest/Image/HomeChef/logo.png";
-import { useStyles } from "./styles";
 import { LoginSchema } from "./LoginSchema";
 import { loginChef, reset } from "../../../features/chef/authSlice";
+import logo from "../../../assest/Image/HomeChef/logo.png";
+import { useStyles } from "./styles";
 
 export default function HomeChefLogin() {
   const classes = useStyles();
@@ -35,6 +35,10 @@ export default function HomeChefLogin() {
     await dispatch(loginChef(values));
   };
 
+  const goBack = () => {
+    navigate(-1);
+  };
+
   return (
     <>
       <div className={classes.container}>
@@ -47,6 +51,7 @@ export default function HomeChefLogin() {
                   src={logo}
                   alt="login-logo"
                   width={"150px"}
+                  onClick={goBack}
                 />
               </div>
               <h2 className={classes.heading}>Welcome </h2>

@@ -63,6 +63,7 @@ export default function HomeChefSignUp() {
                       src={logo}
                       alt="login-logo"
                       width={"150px"}
+                      onClick={() => navigate(-2)}
                     />
                     <div className={classes.account}>
                       <span className={classes.accountText}>
