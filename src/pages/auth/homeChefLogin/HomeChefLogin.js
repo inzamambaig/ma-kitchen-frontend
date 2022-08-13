@@ -35,10 +35,6 @@ export default function HomeChefLogin() {
     await dispatch(loginChef(values));
   };
 
-  const goBack = () => {
-    navigate(-1);
-  };
-
   return (
     <>
       <div className={classes.container}>
@@ -46,13 +42,14 @@ export default function HomeChefLogin() {
           <div className={classes.card}>
             <div className={classes.wrapper}>
               <div className={classes.logo}>
-                <img
-                  className={classes.Login_Logo}
-                  src={logo}
-                  alt="login-logo"
-                  width={"150px"}
-                  onClick={goBack}
-                />
+                <a href="http://makitchen.site/">
+                  <img
+                    className={classes.Login_Logo}
+                    src={logo}
+                    alt="login-logo"
+                    width={"150px"}
+                  />
+                </a>
               </div>
               <h2 className={classes.heading}>Welcome </h2>
               <span className={classes.SubTitle}>Login into your account</span>

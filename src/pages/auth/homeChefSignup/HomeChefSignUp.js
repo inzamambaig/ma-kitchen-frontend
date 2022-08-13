@@ -58,13 +58,14 @@ export default function HomeChefSignUp() {
               <div className={classes.card}>
                 <div className={classes.wrapper}>
                   <div className={classes.logo}>
-                    <img
-                      className={classes.Login_Logo}
-                      src={logo}
-                      alt="login-logo"
-                      width={"150px"}
-                      onClick={() => navigate(-2)}
-                    />
+                    <a href="http://makitchen.site/">
+                      <img
+                        className={classes.Login_Logo}
+                        src={logo}
+                        alt="login-logo"
+                        width={"150px"}
+                      />
+                    </a>
                     <div className={classes.account}>
                       <span className={classes.accountText}>
                         Already have an account?
