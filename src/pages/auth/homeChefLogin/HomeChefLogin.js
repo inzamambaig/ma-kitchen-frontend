@@ -69,26 +69,32 @@ export default function HomeChefLogin() {
                     <Form className={classes.FormikLoginForm}>
                       <label className={classes.Label}>Email</label>
                       <Field
-                        className={classes.Input}
+                        className={
+                          errors.email && touched.email
+                          ? classes.errorInput
+                          : classes.Input}
                         name="email"
                         type="email"
                         placeholder="john@example.com"
                       />
                       {errors.email && touched.email ? (
-                        <div className={classes.errorMessage}>
-                          {errors.email}
+                          <div className={classes.errorMessage}>
+                          {/* {errors.email} */}
                         </div>
                       ) : null}
                       <label className={classes.Label}>Password</label>
                       <Field
-                        className={classes.Password}
+                        className={
+                          errors.password && touched.password
+                          ? classes.errorInput
+                          : classes.Password}
                         name="password"
                         placeholder="password"
                         type="password"
                       />
                       {errors.password && touched.password ? (
                         <span className={classes.errorMessage}>
-                          {errors.password}
+                          {/* {errors.password} */}
                         </span>
                       ) : null}
                       <br />

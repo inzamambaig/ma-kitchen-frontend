@@ -28,7 +28,8 @@ export const useStyles = makeStyles((theme) => ({
   },
 
   wrapper: {
-    backgroundColor: "#08080878",
+    // backgroundColor: "#08080878",
+    background: "linear-gradient(114.83deg, rgba(34, 34, 34, 0.2) 1.85%, rgba(0, 0, 0, 0.2) 101.31%)",
     boxShadow: " -3px 8px 7px 8px rgb(2 2 2 / 37%)",
     backdropFilter: "blur(8.5px)",
     // textAlign: "center",
@@ -36,6 +37,10 @@ export const useStyles = makeStyles((theme) => ({
     maxWidth: "405px",
     margin: "auto",
     borderRadius: "12px",
+    [theme.breakpoints.down("md")]: {
+      padding: "2px 0px",
+      maxWidth: "90%",
+    },
   },
 
   heading: {
@@ -54,6 +59,7 @@ export const useStyles = makeStyles((theme) => ({
     lineheight: "11px",
   },
   FormikLoginForm: {
+    boxSizing: "border-box !important",
     // padding: " 3px 20px",
     // marginRight: "12px",
   },
@@ -67,23 +73,41 @@ export const useStyles = makeStyles((theme) => ({
   },
   Country: {
     // maxHeight: "15px",
-    maxHeight: "37px",
+    // maxHeight: "37px",
   },
   Input: {
     width: "100%",
-    padding: "10px 0px",
+    padding: "7px 0px",
     borderRadius: "2px",
     outline: "none",
-    border: "1px solid #80808069",
+    margin: "0px 0px",
+    border: "2px solid #80808069",
     paddingLeft: "10px",
-    marginTop: "15px",
+    boxSizing: "border-box"
+  },
+  errorInput: {
+    width: "100%",
+    padding: "7px 0px",
+    borderRadius: "2px",
+    outline: "none",
+    margin: "0px 0px",
+    border: "2px solid red",  
+    paddingLeft: "10px",
+    boxSizing: "border-box"
+  },
+
+  Select: {
+    width: "100%",
+    padding: "5px 0px",
+    // margin: "-2px 0px",
+    marginRight: "0px",
   },
   SubmitButton: {
     backgroundColor: "#e87906",
     width: "100%",
-    padding: "10px",
+    padding: "5px",
     border: "none",
-    margin: "18px 0px",
+    margin: "5px 0px",
     color: "#fff",
     "&:hover": {
       backgroundColor: "#e87906",
@@ -124,13 +148,13 @@ export const useStyles = makeStyles((theme) => ({
     textAlign: "center",
   },
   email: {
-    marginRight: "12px",
+    // marginRight: "12px",
   },
   ContainerBox: {
     alignItems: "center",
     color: theme.palette.common.white,
     background: "radial-gradient(#00000054, #2a212166)",
-    // height: "100%",
+    height: "100%",
   },
   headingOne: {
     fontFamily: "inherit",
@@ -140,8 +164,15 @@ export const useStyles = makeStyles((theme) => ({
     lineHeight: "55px",
   },
   para: {
-    margin: "75px",
-    marginRight: "0px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    margin: "0px 70px",
+    // marginRight: "0px",
+    [theme.breakpoints.down("md")]: {
+      textAlign: "center",
+    },
     [theme.breakpoints.down("xs")]: {
       margin: "15px",
     },

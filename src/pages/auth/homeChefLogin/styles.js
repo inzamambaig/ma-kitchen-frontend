@@ -13,6 +13,8 @@ export const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     backgroundPosition: "center center",
+    display: "flex",
+    alignItems: "center"
   },
   errorMessage: {
     color: "#FA4949",
@@ -21,7 +23,8 @@ export const useStyles = makeStyles((theme) => ({
   },
   card: {
     margin: "20px",
-    backgroundColor: "#08080878",
+    // backgroundColor: "#08080878",
+    background: "linear-gradient(114.83deg, rgba(34, 34, 34, 0.2) 1.85%, rgba(0, 0, 0, 0.2) 101.31%)",
     borderRadius: "12px",
   },
 
@@ -31,11 +34,15 @@ export const useStyles = makeStyles((theme) => ({
     backdropFilter: "blur(8.5px)",
     textAlign: "center",
     padding: "15px",
-    maxWidth: "400px",
+    // width: "400px",
+    // boxsizing: "border-box",
     margin: "auto",
     borderRadius: "12px",
     [theme.breakpoints.down("xs")]: {
       backdropFilter: "blur(5.5px)",
+    },
+    [theme.breakpoints.down("md")]: {
+      maxWidth: "unset",
     },
   },
 
@@ -57,15 +64,26 @@ export const useStyles = makeStyles((theme) => ({
   FormikLoginForm: {
     padding: " 3px 20px",
     textAlign: "start",
+    width: "436px",
+    [theme.breakpoints.down("md")]: {
+      padding: " 3px 0px",
+    },
   },
   Input: {
     width: "95%",
     padding: "12px 0px",
     borderRadius: "2px",
     outline: "none",
-    border: "1px solid #80808069",
+    border: "2px solid #80808069",
     paddingLeft: "16px",
-    marginBottom: "20px",
+  },
+  errorInput: {
+    width: "95%",
+    padding: "12px 0px",
+    borderRadius: "2px",
+    outline: "none",
+    border: "2px solid red",
+    paddingLeft: "16px",
   },
   Password: {
     width: "95%",
@@ -74,14 +92,17 @@ export const useStyles = makeStyles((theme) => ({
     outline: "none",
     border: "1px solid #80808069",
     paddingLeft: "16px",
-    marginBottom: "7px",
+    // marginBottom: "7px",
   },
+  
   Label: {
     color: theme.palette.common.white,
     fontStyle: "normal",
     fontWeight: 600,
     fontSize: "18px",
     lineHeight: "25px",
+    display: "inline-block",
+    margin: "2px 0px"
   },
   SubmitButton: {
     backgroundColor: "#e87906",
@@ -121,6 +142,7 @@ export const useStyles = makeStyles((theme) => ({
     fontSize: "13px",
     lineHeight: "14px",
   },
+
   SignUpButton: {
     fontFamily: "inherit",
     fontSize: "13px",
@@ -129,6 +151,7 @@ export const useStyles = makeStyles((theme) => ({
     lineHeight: "14px",
     color: theme.palette.common.white,
   },
+
   loader: {
     position: "absolute",
     left: "50%",

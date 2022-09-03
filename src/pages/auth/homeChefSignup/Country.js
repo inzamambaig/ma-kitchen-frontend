@@ -1,7 +1,7 @@
 const Country = () => {
   return (
     <>
-                                        <option value="Afghanistan">Afghanistan</option>
+                                <option value="Afghanistan">Afghanistan</option>
                                 <option value="Albania">Albania</option>
                                 <option value="Algeria">Algeria</option>
                                 <option value="American Samoa">
