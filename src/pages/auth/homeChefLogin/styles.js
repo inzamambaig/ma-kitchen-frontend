@@ -13,8 +13,6 @@ export const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     backgroundPosition: "center center",
-    display: "flex",
-    alignItems: "center"
   },
   errorMessage: {
     color: "#FA4949",
@@ -34,8 +32,6 @@ export const useStyles = makeStyles((theme) => ({
     backdropFilter: "blur(8.5px)",
     textAlign: "center",
     padding: "15px",
-    // width: "400px",
-    // boxsizing: "border-box",
     margin: "auto",
     borderRadius: "12px",
     [theme.breakpoints.down("xs")]: {
@@ -47,7 +43,7 @@ export const useStyles = makeStyles((theme) => ({
   },
 
   heading: {
-    marginBottom: "0px",
+    margin: "0px",
     fontStyle: "normal",
     fontWeight: 600,
     fontSize: "36px",
@@ -65,8 +61,11 @@ export const useStyles = makeStyles((theme) => ({
     padding: " 3px 20px",
     textAlign: "start",
     width: "436px",
+    boxSizing: "border-box",
     [theme.breakpoints.down("md")]: {
       padding: " 3px 0px",
+      width: "90%",
+      margin : "0px auto",
     },
   },
   Input: {

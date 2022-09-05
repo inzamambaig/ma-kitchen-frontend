@@ -11,7 +11,7 @@ import Country from "./Country";
 import CountryCodes from "./CountryCodes";
 import { createChef, reset } from "../../../features/chef/authSlice";
 import { SignupSchema } from "./SignupSchema";
-
+import 'yup-phone';
 export default function HomeChefSignUp() {
   const classes = useStyles();
   const navigate = useNavigate();
@@ -248,6 +248,7 @@ export default function HomeChefSignUp() {
                                 }
                                 name="phone"
                                 placeholder="+92"
+                                type="number"
                               />
                               {errors.phone && touched.phone ? (
                                 <div className={classes.errorMessage}>
@@ -284,7 +285,7 @@ export default function HomeChefSignUp() {
                                     : classes.Input
                                 }
                                 name="employees"
-                                type="text"
+                                type="number"
                                 placeholder="Number of Employees"
                               />
                               {errors.employees && touched.employees ? (

@@ -33,7 +33,7 @@ export const useStyles = makeStyles((theme) => ({
     boxShadow: " -3px 8px 7px 8px rgb(2 2 2 / 37%)",
     backdropFilter: "blur(8.5px)",
     // textAlign: "center",
-    padding: "2px 50px",
+    padding: "20px 50px",
     maxWidth: "405px",
     margin: "auto",
     borderRadius: "12px",
@@ -57,6 +57,7 @@ export const useStyles = makeStyles((theme) => ({
     fontweight: "400",
     fontsize: "15.035px",
     lineheight: "11px",
+    marginBottom: "10px",
   },
   FormikLoginForm: {
     boxSizing: "border-box !important",
@@ -83,7 +84,7 @@ export const useStyles = makeStyles((theme) => ({
     margin: "0px 0px",
     border: "2px solid #80808069",
     paddingLeft: "10px",
-    boxSizing: "border-box"
+    boxSizing: "border-box",
   },
   errorInput: {
     width: "100%",
@@ -93,7 +94,7 @@ export const useStyles = makeStyles((theme) => ({
     margin: "0px 0px",
     border: "2px solid red",  
     paddingLeft: "10px",
-    boxSizing: "border-box"
+    boxSizing: "border-box",
   },
 
   Select: {
@@ -107,7 +108,7 @@ export const useStyles = makeStyles((theme) => ({
     width: "100%",
     padding: "5px",
     border: "none",
-    margin: "5px 0px",
+    margin: "10px 0px",
     color: "#fff",
     "&:hover": {
       backgroundColor: "#e87906",
@@ -162,6 +163,7 @@ export const useStyles = makeStyles((theme) => ({
     fontWeight: "600",
     fontSize: "60px",
     lineHeight: "55px",
+    margin : "0px auto"
   },
   para: {
     display: "flex",
@@ -182,7 +184,7 @@ export const useStyles = makeStyles((theme) => ({
     fontStyle: "normal",
     fontWeight: "400",
     fontSize: "19px",
-    lineHeight: "30px",
+    lineHeight: "25px",
     /* or 125% */
   },
   account: {
