@@ -6,6 +6,7 @@ import HomeChefLogin from "./pages/auth/homeChefLogin/HomeChefLogin";
 import HomeChefSignUp from "./pages/auth/homeChefSignup/HomeChefSignUp";
 import Logout from "./pages/auth/Logout";
 import Dashboard from "./pages/dashboard/Dashboard";
+import EmailVer from "./pages/auth/emailVerification/email.js";
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
             <Route path="/signup" element={<HomeChefSignUp />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/logout" element={<Logout />} />
+            <Route path="/email" element={<EmailVer />} />
+
           </Routes>
         </div>
       </Router>

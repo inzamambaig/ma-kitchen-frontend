@@ -115,9 +115,13 @@ export const useStyles = makeStyles((theme) => ({
     color: "#fff",
     "&:hover": {
       backgroundColor: "#e87906",
+      
     },
   },
   TermsConditions: {
+    display: "flex",
+      justifyContent:"start",
+      alignItems:"center",
     textAlign: "center",
   },
   Terms: {

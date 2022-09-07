@@ -102,7 +102,8 @@ export const useStyles = makeStyles((theme) => ({
     fontSize: "18px",
     lineHeight: "25px",
     display: "inline-block",
-    margin: "2px 0px"
+    margin: "0px",
+    marginTop: "10px",
   },
   SubmitButton: {
     backgroundColor: "#e87906",
@@ -121,6 +122,7 @@ export const useStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
     alignItems: "center",
     fontSize: "12px",
+    margin: "5px",
   },
   radioBox: {
     display: "flex",
