@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -11,10 +11,13 @@ import Country from "./Country";
 import CountryCodes from "./CountryCodes";
 import { createChef, reset } from "../../../features/chef/authSlice";
 import { SignupSchema } from "./SignupSchema";
+
 export default function HomeChefSignUp() {
   const classes = useStyles();
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const [isChecked, setChecked] = useState(false);
 
   const { chef, isLoading, isError, isSuccess, message } = useSelector(
     (state) => state.auth
@@ -45,12 +48,14 @@ export default function HomeChefSignUp() {
             height: "100%",
           }}
         >
-          <Grid container className={classes.ContainerBox} spacing={3}
-          style = {{ 
-            display: "flex",
-            alignItems: "center",
-
-           }}
+          <Grid
+            container
+            className={classes.ContainerBox}
+            spacing={3}
+            style={{
+              display: "flex",
+              alignItems: "center",
+            }}
           >
             <Grid item xs={12} sm={12} lg={6}>
               <div className={classes.para}>
@@ -67,7 +72,6 @@ export default function HomeChefSignUp() {
             <Grid item xs={12} sm={12} lg={6}>
               <div className={classes.card}>
                 <div className={classes.wrapper}>
-
                   <div className={classes.logo}>
                     <a href="http://makitchen.site/">
                       <img
@@ -106,6 +110,7 @@ export default function HomeChefSignUp() {
                         employees: "",
                         city: "",
                         postalcode: "",
+                        countrycode: "",
                         state: "",
                         country: "",
                         address: "",
@@ -237,13 +242,17 @@ export default function HomeChefSignUp() {
                               <Field
                                 as="select"
                                 name="countrycode"
-                                className={[
-                                  classes.Input,
-                                  classes.Country,
-                                ].join(" ")}
+                                className={
+                                  errors.countrycode && touched.countrycode
+                                    ? classes.errorInput
+                                    : [classes.Input, classes.Country].join(" ")
+                                }
                               >
                                 <CountryCodes />
                               </Field>
+                              {errors.countrycode && touched.countrycode ? (
+                                <div className={classes.errorMessage}></div>
+                              ) : null}
                             </Grid>
                             <Grid item xs={8}>
                               <Field
@@ -253,7 +262,7 @@ export default function HomeChefSignUp() {
                                     : classes.Input
                                 }
                                 name="phone"
-                                placeholder="+92"
+                                placeholder={"Phone"}
                                 type="number"
                               />
                               {errors.phone && touched.phone ? (
@@ -413,11 +422,16 @@ export default function HomeChefSignUp() {
                           <Button
                             type="submit"
                             className={classes.SubmitButton}
+                            disabled={isChecked ? false : true}
                           >
                             Submit
                           </Button>
                           <div className={classes.TermsConditions}>
-                            <input type="checkBox" />
+                            <input
+                              type="checkBox"
+                              checked={isChecked}
+                              onChange={() => setChecked((prev) => !prev)}
+                            />
                             <label className={classes.Terms}>
                               By continuing you indicate that you read and
                               agreed to the Terms of Use
@@ -427,7 +441,6 @@ export default function HomeChefSignUp() {
                       )}
                     </Formik>
                   </div>
-
                 </div>
               </div>
             </Grid>

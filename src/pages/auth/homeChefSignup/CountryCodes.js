@@ -1,6 +1,9 @@
 const CountryCodes = () => {
   return (
     <>
+      <option data-countrycode="" value="">
+        Country Code
+      </option>
       <option data-countrycode="PK" value="92">
         Pakistan (+92)
       </option>

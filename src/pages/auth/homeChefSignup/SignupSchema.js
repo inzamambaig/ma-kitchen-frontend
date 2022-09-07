@@ -17,6 +17,7 @@ export const SignupSchema = Yup.object().shape({
     [Yup.ref("password"), null],
     "Passwords must match"
   ),
+  countrycode: Yup.string().required("Select Country Code"),
   phone: Yup.string()
     .min(7, "Too Short!")
     .max(30, "Too Long!")
@@ -24,7 +25,7 @@ export const SignupSchema = Yup.object().shape({
   kitchenname: Yup.string()
     .min(1, "Too Short!")
     .max(50, "Too Long!")
-    .required(" Add Kitchen Name"),
+    .required("Add Kitchen Name"),
   employees: Yup.string()
     .min(1, "Too Short!")
     .max(50, "Too Long!")
