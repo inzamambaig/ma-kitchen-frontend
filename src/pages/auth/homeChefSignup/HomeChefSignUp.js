@@ -11,7 +11,6 @@ import Country from "./Country";
 import CountryCodes from "./CountryCodes";
 import { createChef, reset } from "../../../features/chef/authSlice";
 import { SignupSchema } from "./SignupSchema";
-import 'yup-phone';
 export default function HomeChefSignUp() {
   const classes = useStyles();
   const navigate = useNavigate();
@@ -154,7 +153,7 @@ export default function HomeChefSignUp() {
                               {/* <br /> */}
                             </Grid>
                           </Grid>
-                          <Grid container className={classes.email} spacing={2} >
+                          <Grid container className={classes.email} spacing={2}>
                             <Grid item xs={12}>
                               <Field
                                 className={
@@ -257,7 +256,7 @@ export default function HomeChefSignUp() {
                               ) : null}
                             </Grid>
                           </Grid>
-                          <Grid container className={classes.email}  spacing={2}>
+                          <Grid container className={classes.email} spacing={2}>
                             <Grid item xs={12}>
                               <Field
                                 className={
@@ -384,7 +383,6 @@ export default function HomeChefSignUp() {
                                 </div>
                               ) : null}
                             </Grid>
-                            
                           </Grid>
                           <Grid container className={classes.email} spacing={2}>
                             <Grid item xs={12}>
@@ -413,8 +411,8 @@ export default function HomeChefSignUp() {
                           </Button>
                           <div className={classes.TermsConditions}>
                             <label className={classes.Terms}>
-                              By continuing you indicate that you read
-                              and agreed to the Terms of Use
+                              By continuing you indicate that you read and
+                              agreed to the Terms of Use
                             </label>
                           </div>
                         </Form>
