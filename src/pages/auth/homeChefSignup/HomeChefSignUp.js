@@ -46,7 +46,13 @@ export default function HomeChefSignUp() {
             height: "100%",
           }}
         >
-          <Grid container className={classes.ContainerBox} spacing={3}>
+          <Grid container className={classes.ContainerBox} spacing={3}
+          style = {{ 
+            display: "flex",
+            alignItems: "center",
+
+           }}
+          >
             <Grid item xs={12} sm={12} lg={6}>
               <div className={classes.para}>
                 <h1 className={classes.headingOne}>
@@ -62,6 +68,7 @@ export default function HomeChefSignUp() {
             <Grid item xs={12} sm={12} lg={6}>
               <div className={classes.card}>
                 <div className={classes.wrapper}>
+
                   <div className={classes.logo}>
                     <a href="http://makitchen.site/">
                       <img
@@ -412,6 +419,7 @@ export default function HomeChefSignUp() {
                             Submit
                           </Button>
                           <div className={classes.TermsConditions}>
+                            <input type="checkBox" />
                             <label className={classes.Terms}>
                               By continuing you indicate that you read
                               and agreed to the Terms of Use
@@ -421,6 +429,7 @@ export default function HomeChefSignUp() {
                       )}
                     </Formik>
                   </div>
+
                 </div>
               </div>
             </Grid>

@@ -34,6 +34,7 @@ export const useStyles = makeStyles((theme) => ({
     padding: "15px",
     margin: "auto",
     borderRadius: "12px",
+    height: "100%",
     [theme.breakpoints.down("xs")]: {
       backdropFilter: "blur(5.5px)",
     },
@@ -159,5 +160,9 @@ export const useStyles = makeStyles((theme) => ({
   },
   Login_Logo: {
     cursor: "pointer",
+  },
+  backIcon: {
+    position : "absolute",
+    left : 0,
   },
 }));

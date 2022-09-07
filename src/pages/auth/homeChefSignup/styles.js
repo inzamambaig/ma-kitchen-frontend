@@ -5,12 +5,12 @@ export const useStyles = makeStyles((theme) => ({
   container: {
     width: "100%",
     height: "100%",
-    // display: "flex",
     backgroundImage: `url(${bgImage})`,
     backgroundRepeat: "no-repeat",
     position: "fixed",
     backgroundSize: "cover",
-    justifyContent: "center",
+    // display: "flex",
+    // justifyContent: "center",
     // alignItems: "center",
     backgroundPosition: "center center",
     [theme.breakpoints.down("xs")]: {
@@ -32,10 +32,13 @@ export const useStyles = makeStyles((theme) => ({
     background: "linear-gradient(114.83deg, rgba(34, 34, 34, 0.2) 1.85%, rgba(0, 0, 0, 0.2) 101.31%)",
     boxShadow: " -3px 8px 7px 8px rgb(2 2 2 / 37%)",
     backdropFilter: "blur(8.5px)",
-    // textAlign: "center",
+    height: "100%",
     padding: "20px 50px",
     maxWidth: "405px",
     margin: "auto",
+    // display: "flex",
+    // justifyContent: "center",
+    // alignItems: "center",
     borderRadius: "12px",
     [theme.breakpoints.down("md")]: {
       padding: "2px 0px",
@@ -154,8 +157,8 @@ export const useStyles = makeStyles((theme) => ({
   ContainerBox: {
     alignItems: "center",
     color: theme.palette.common.white,
-    background: "radial-gradient(#00000054, #2a212166)",
-    height: "100%",
+    // background: "radial-gradient(#00000054, #2a212166)",
+    height: "100vh !important",
   },
   headingOne: {
     fontFamily: "inherit",
