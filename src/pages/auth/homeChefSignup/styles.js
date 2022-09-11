@@ -112,7 +112,7 @@ export const useStyles = makeStyles((theme) => ({
     padding: "5px",
     border: "none",
     margin: "10px 0px",
-    color: "#fff",
+    color: "#FFFFFF",
     "&:hover": {
       backgroundColor: "#e87906",
       

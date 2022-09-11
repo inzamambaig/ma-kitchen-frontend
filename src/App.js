@@ -7,6 +7,12 @@ import HomeChefSignUp from "./pages/auth/homeChefSignup/HomeChefSignUp";
 import Logout from "./pages/auth/Logout";
 import Dashboard from "./pages/dashboard/Dashboard";
 import EmailVer from "./pages/auth/emailVerification/email.js";
+import Location from "./pages/auth/location/location.js";
+import UploadLogo from "./pages/auth/uploadLogo/uploadLogo.js";
+import Reset from "./pages/auth/reset/reset.js";
+import GetCode from "./pages/auth/getcode/getCode.js";
+import Forget from "./pages/auth/forget/forget.js";
+import Upload from "./pages/auth/uploadCover/upload";
 
 function App() {
   return (
@@ -19,6 +25,12 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/email" element={<EmailVer />} />
+            <Route path="/location" element={<Location />} />
+            <Route path="/uploadLogo" element={<UploadLogo />} />
+            <Route path="/reset" element={<Reset />} />
+            <Route path="/getCode" element={<GetCode />} />
+            <Route path="/forget" element={<Forget />} />
+            <Route path="/upload" element={<Upload />} />
 
           </Routes>
         </div>
