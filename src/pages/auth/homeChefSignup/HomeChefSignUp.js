@@ -97,7 +97,9 @@ export default function HomeChefSignUp() {
                     </span>
                   </div>
 
-                  <div className={classes.LoginForm}>
+                  <div className={classes.LoginForm} style={{ 
+                    marginTop: "20px",
+                   }}>
                     <Formik
                       initialValues={{
                         firstname: "",

@@ -43,7 +43,7 @@ export const useStyles = makeStyles((theme) => ({
     color: "#000000",
     textAlign: "center",
     margin: "0px",
-    padding: "5px 0px",
+    // padding: "5px 0px",
     [theme.breakpoints.down("xs")]: {
       fontSize: "18px",
     },
@@ -76,7 +76,7 @@ export const useStyles = makeStyles((theme) => ({
       fontSize: "16px",
     },
     [theme.breakpoints.down("xs")]: {
-      padding: "0px 35%",
+      // padding: "0px 35%",
     },
   },
   submitBtn: {
@@ -85,11 +85,14 @@ export const useStyles = makeStyles((theme) => ({
     height: "50px",
     fontSize: "18px",
     width: "100%",
-    margin: "20px 0px",
+    margin: "5px 0px",
     border: "1px solid #DD7611",
     "&:hover": {
       color: "#DD7611",
       backgroundColor: "#FFFFFF",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "12px",
     },
   },
 }));

@@ -1,0 +1,43 @@
+.MuiDropzoneArea-root {
+  border: 3px dashed;
+  border-color: #f38828 !important;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+}
+.MuiDropzoneArea-textContainer {
+  order: 2;
+}
+.MuiDropzoneArea-textContainer h4 {
+  margin: 0%;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+
+  color: #000000;
+}
+.MuiDropzoneArea-textContainer a {
+  text-decoration: none;
+  color: #167ee6;
+}
+.MuiDropzoneArea-icon {
+  order: 1;
+  background: url(../../../assest/Image/HomeChef/dragndrop.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: transparent !important;
+  background-position: top;
+  /* width: 51px; */
+  height: 51px;
+  display: none;
+}
+
+
+
+@media screen and (max-width: 425px) {
+    .MuiDropzoneArea-textContainer h4 {
+        font-size: 14px;
+    }
+}

@@ -31,7 +31,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   card: {
     background: "#FFFFFF",
-    width: "576px",
+    width: "506px",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
@@ -78,8 +78,9 @@ export const useStyles = makeStyles((theme) => ({
     width: "100%",
     padding: "5px",
     border: "none",
-    margin: "10px 0px 12px 0px",
+    margin: "10px 0px 0px 0px",
     boxSizing: "border-box",
+    height:"50px",
     "&:hover": {
       backgroundColor: "#e87906",
 

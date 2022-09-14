@@ -38,11 +38,11 @@ export const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     border: "1px solid #DD7611",
     borderRadius: "5px",
-    padding: "45px 20px",
+    padding: "45px 40px",
     boxSizing: "border-box",
     [theme.breakpoints.down("xs")]: {
         width: "90%",
-        padding: "10px 10px",
+        padding: "10px 30px",
       },
   },
   para: {
@@ -77,6 +77,7 @@ export const useStyles = makeStyles((theme) => ({
     color: "#FFFFFF",
     width: "100%",
     padding: "5px",
+    height: "50px",
     border: "none",
     margin: "10px 0px 12px 0px",
     boxSizing: "border-box",

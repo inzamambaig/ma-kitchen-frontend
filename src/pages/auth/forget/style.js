@@ -18,14 +18,14 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   box: {
-    width: "506px",
-    padding: "20px",
+    width: "606px",
+    padding: "20px 70px",
     backgroundColor: "#FFFFFF",
     border: "1px solid #DD7611",
     boxSizing: "border-box",
     [theme.breakpoints.down("xs")]: {
       width: "90%",
-      // margin: "0px auto",
+      padding: "20px 20px",
     },
   },
   card: {
@@ -43,7 +43,7 @@ export const useStyles = makeStyles((theme) => ({
     color: "#000000",
     textAlign: "center",
     margin: "0px",
-    padding: "10px 0px",
+    // padding: "10px 0px",
     [theme.breakpoints.down("xs")]: {
       fontSize: "18px",
     },
@@ -55,8 +55,10 @@ export const useStyles = makeStyles((theme) => ({
     fontSize: "16px",
     color: "#000000",
     textAlign: "center",
+    margin: "0px",
+    marginBottom:"5px",
     [theme.breakpoints.down("xs")]: {
-      fontSize: "15px",
+      fontSize: "12px",
     },
   },
   field: {
@@ -71,20 +73,26 @@ export const useStyles = makeStyles((theme) => ({
       fontSize: "16px",
     },
     [theme.breakpoints.down("xs")]: {
-      padding: "0px 35%",
+      padding: "0px 21%",
+      "&:placeholder": {
+        fontSize: "12px",
+      },
     },
   },
   submitBtn: {
     backgroundColor: "#DD7611",
     color: "#FFFFFF",
     width: "100%",
-    margin: "20px 0px",
+    margin: "10px 0px",
     height: "50px",
     fontSize: "18px",
     border: "1px solid #DD7611",
     "&:hover": {
       color: "#DD7611",
       backgroundColor: "#FFFFFF",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "12px",
     },
   },
 }));

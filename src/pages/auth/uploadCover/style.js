@@ -48,14 +48,17 @@ export const useStyles = makeStyles((theme) => ({
     fontFamily: "inherit",
     fontStyle: "normal",
     fontWeight: 400,
-    // fontSize: "20px",
+    padding: "5px 15px",
     border: "1px solid #DD7611",
     borderRadius: "5px",
     color: "#DD7611",
-    padding: "5px 15px",
     "&:hover": {
       backgroundColor: "#DD7611",
       color: "#FFFFFF",
+    },
+    [theme.breakpoints.down("xs")]: {
+      padding: "3px 5px",
+      fontSize: "12px",
     },
   },
   logo: {
@@ -71,6 +74,11 @@ export const useStyles = makeStyles((theme) => ({
     "&:hover": {
       backgroundColor: "#FFFFFF",
       color: "#DD7611",
+    },
+    [theme.breakpoints.down("xs")]: {
+      padding: "3px 5px",
+      marginLeft: "5px",
+      fontSize: "12px",
     },
   },
 }));

@@ -19,7 +19,7 @@ const GetCode = () => {
           </p>
           <span className={classes.para1}>Didn’t recieve any email?</span>
           <Button type="submit" className={classes.SubmitButton}>
-            Next
+          Resend 
           </Button>
         </Grid>
       </div>
