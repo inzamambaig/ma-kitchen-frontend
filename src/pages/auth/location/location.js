@@ -35,7 +35,7 @@ const Location = () => {
               icon=""
               placeholder="     Search Area"
             />
-            <img className={classes.image} src={LocationIcon} alt=""/>
+            <img className={classes.image} src={LocationIcon} alt="" />
           </Grid>
           <Grid>
             <img
@@ -46,10 +46,14 @@ const Location = () => {
               alt=""
             />
           </Grid>
-          <Grid item xs={12} style={{ 
-            display: "flex",
-            justifyContent: "center",
-           }}>
+          <Grid
+            item
+            xs={12}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
             <Button className={classes.submitButton}>Continue</Button>
           </Grid>
         </Grid>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { Button, Grid } from "@material-ui/core";
 import { useStyles } from "./style.js";
 
@@ -11,20 +11,20 @@ const Forget = () => {
           <Grid item>
             <h2 className={classes.heading}>Password Reset</h2>
             <p className={classes.para}>
-              Enter your registerd email below and we will send you a link to
-              reset your password
+              Enter your registerd email below and we will <br></br>send you a
+              link to reset your password
             </p>
           </Grid>
           <input
-                className={classes.field}
-                type="text"
-                placeholder="example@email.com"
-              />
-            <Button className={classes.submitBtn}>Submit</Button>
+            className={classes.field}
+            type="text"
+            placeholder="example@email.com"
+          />
+          <Button className={classes.submitBtn}>Submit</Button>
         </Grid>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Forget;

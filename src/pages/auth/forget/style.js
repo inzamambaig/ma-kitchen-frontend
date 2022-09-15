@@ -56,7 +56,7 @@ export const useStyles = makeStyles((theme) => ({
     color: "#000000",
     textAlign: "center",
     margin: "0px",
-    marginBottom:"5px",
+    marginBottom: "5px",
     [theme.breakpoints.down("xs")]: {
       fontSize: "12px",
     },
@@ -82,6 +82,7 @@ export const useStyles = makeStyles((theme) => ({
   submitBtn: {
     backgroundColor: "#DD7611",
     color: "#FFFFFF",
+    textTransform: "none",
     width: "100%",
     margin: "10px 0px",
     height: "50px",

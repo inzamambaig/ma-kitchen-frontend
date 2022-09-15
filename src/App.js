@@ -27,11 +27,10 @@ function App() {
             <Route path="/email" element={<EmailVer />} />
             <Route path="/location" element={<Location />} />
             <Route path="/uploadLogo" element={<UploadLogo />} />
+            <Route path="/upload" element={<Upload />} />
+            <Route path="/forget" element={<Forget />} />
             <Route path="/reset" element={<Reset />} />
             <Route path="/getCode" element={<GetCode />} />
-            <Route path="/forget" element={<Forget />} />
-            <Route path="/upload" element={<Upload />} />
-
           </Routes>
         </div>
       </Router>

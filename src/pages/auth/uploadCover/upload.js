@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { DropzoneArea } from "material-ui-dropzone";
 import { Button, Grid } from "@material-ui/core";
 import { useStyles } from "./style.js";
@@ -18,17 +18,27 @@ const Upload = () => {
               <DropzoneArea
                 acceptedFiles={["image/*"]}
                 onChange={(files) => console.log("Files:", files)}
-                dropzoneText={<h4>Drop & Drop your file here
-                  or <br/> <a href="./">choose file</a></h4>}
+                dropzoneText={
+                  <h4>
+                    Drop & Drop your file here or <br />
+                    <a href="./" className={classes.file}>
+                      choose file
+                    </a>
+                  </h4>
+                }
               />
             </Grid>
-            <Grid item xs={12} style={{ 
-              width: "100%",
-              display: "flex",
-              justifyContent: "space-between",
-              backgroundColor: "#EEEEEE",
-              padding: "10px 20px",
-              }}>
+            <Grid
+              item
+              xs={12}
+              style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "space-between",
+                backgroundColor: "#EEEEEE",
+                padding: "10px 20px",
+              }}
+            >
               <div>
                 <Button>Skip</Button>
               </div>
@@ -41,7 +51,7 @@ const Upload = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
 export default Upload;

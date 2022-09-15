@@ -35,7 +35,7 @@ export const useStyles = makeStyles((theme) => ({
     borderRadius: "5px",
     padding: "5px 10px",
     boxSizing: "border-box",
-    margin : "20px 0px",
+    margin: "20px 0px",
     [theme.breakpoints.down("xs")]: {
       width: "90%",
       padding: "10px 10px",
@@ -89,7 +89,7 @@ export const useStyles = makeStyles((theme) => ({
   submitButton: {
     backgroundColor: "#DD7611",
     color: "#FFFFFF",
-    width: "80%",
+    width: "70%",
     margin: "20px 0px",
     border: "1px solid #DD7611",
     "&:hover": {

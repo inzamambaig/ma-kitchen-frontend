@@ -25,9 +25,9 @@ export const useStyles = makeStyles((theme) => ({
     fontSize: "30px",
     margin: "0px 0px 20px 0px",
     [theme.breakpoints.down("xs")]: {
-        fontSize: "18px",
-        margin: "0px 0px 10px 0px",
-      },
+      fontSize: "18px",
+      margin: "0px 0px 10px 0px",
+    },
   },
   card: {
     background: "#FFFFFF",
@@ -41,9 +41,9 @@ export const useStyles = makeStyles((theme) => ({
     padding: "45px 20px",
     boxSizing: "border-box",
     [theme.breakpoints.down("xs")]: {
-        width: "90%",
-        padding: "10px 10px",
-      },
+      width: "90%",
+      padding: "10px 10px",
+    },
   },
   para: {
     textAlign: "center",
@@ -53,9 +53,9 @@ export const useStyles = makeStyles((theme) => ({
     fontSize: "16px",
     margin: "0px 20px",
     [theme.breakpoints.down("xs")]: {
-        fontSize: "13px",
-        margin: "0px 10px",
-      },
+      fontSize: "13px",
+      margin: "0px 10px",
+    },
   },
   link: {
     textDecoration: "none",
@@ -69,21 +69,23 @@ export const useStyles = makeStyles((theme) => ({
     fontSize: "16px",
     marginTop: "20px",
     [theme.breakpoints.down("xs")]: {
-        fontSize: "13px",
-      },
+      fontSize: "13px",
+    },
   },
   SubmitButton: {
     background: "#DD7611",
     color: "#FFFFFF",
+    textTransform: "none",
     width: "100%",
     padding: "5px",
     border: "none",
     margin: "10px 0px 0px 0px",
     boxSizing: "border-box",
-    height:"50px",
+    height: "50px",
     "&:hover": {
-      backgroundColor: "#e87906",
-
+      color: "#DD7611",
+      backgroundColor: "#FFFFFF",
+      border: "1px solid #DD7611",
     },
-  }
+  },
 }));
