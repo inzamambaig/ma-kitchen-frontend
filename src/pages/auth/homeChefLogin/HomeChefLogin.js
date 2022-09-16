@@ -81,11 +81,11 @@ export default function HomeChefLogin() {
                         type="email"
                         placeholder="john@example.com"
                       />
-                      {errors.email && touched.email ? (
+                      {/* {errors.email && touched.email ? (
                           <div className={classes.errorMessage}>
-                          {/* {errors.email} */}
+                          {errors.email}
                         </div>
-                      ) : null}
+                      ) : null} */}
                       <label className={classes.Label}>Password</label>
                       <Field
                         className={
@@ -96,16 +96,14 @@ export default function HomeChefLogin() {
                         placeholder="password"
                         type="password"
                       />
-                      {errors.password && touched.password ? (
+                      {/* {errors.password && touched.password ? (
                         <span className={classes.errorMessage}>
-                          {/* {errors.password} */}
+                          {errors.password}
                         </span>
-                      ) : null}
+                      ) : null} */}
                       <br />
                       <div className={classes.checkout}>
                         <span className={classes.radioBox}>
-                          {/* <input type="checkbox" className={classes.Checkbox} />
-                          Stay Signed In */}
                           <Field
                             type="checkbox"
                             className={classes.Checkbox}

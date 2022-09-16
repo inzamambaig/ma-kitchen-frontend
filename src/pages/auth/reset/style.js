@@ -19,7 +19,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   box: {
     width: "506px",
-    padding: "20px",
+    padding: "20px 40px",
     backgroundColor: "#FFFFFF",
     border: "1px solid #DD7611",
     boxSizing: "border-box",
@@ -53,7 +53,7 @@ export const useStyles = makeStyles((theme) => ({
     fontStyle: "normal",
     fontWeight: 400,
     fontSize: "16px",
-    color: "#000000",
+    color: "#0D0D0D",
     margin:"0px",
     textAlign: "center",
     [theme.breakpoints.down("xs")]: {
@@ -66,7 +66,7 @@ export const useStyles = makeStyles((theme) => ({
   field: {
     height: "51px",
     background: "#FFFFFF",
-    border: "2px solid #DD7611",
+    border: "1px solid #DD7611",
     borderRadius: "2px",
     padding: "0px 15px",
     width: "100%",

@@ -53,10 +53,10 @@ export const useStyles = makeStyles((theme) => ({
     fontStyle: "normal",
     fontWeight: 400,
     fontSize: "16px",
-    color: "#000000",
     textAlign: "center",
     margin: "0px",
     marginBottom:"5px",
+    color: "#5A5A5A",
     [theme.breakpoints.down("xs")]: {
       fontSize: "12px",
     },

@@ -111,6 +111,7 @@ export const useStyles = makeStyles((theme) => ({
     padding: "10px",
     border: "none",
     margin: "7px 0px",
+    height: "51px",
     color: "#fff",
     "&:hover": {
       backgroundColor: "#e87906",
@@ -122,7 +123,7 @@ export const useStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
     alignItems: "center",
     fontSize: "12px",
-    margin: "5px",
+    margin: "17px 0px 0px 0px",
   },
   radioBox: {
     display: "flex",
@@ -150,7 +151,6 @@ export const useStyles = makeStyles((theme) => ({
     fontSize: "13px",
     fontStyle: "normal",
     fontWeight: "400",
-    lineHeight: "14px",
     color: theme.palette.common.white,
   },
 

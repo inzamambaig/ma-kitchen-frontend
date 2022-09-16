@@ -1,7 +1,7 @@
 import React from "react";
 import { Button , Grid } from "@material-ui/core";
 import { useStyles } from "./style.js";
-
+import BackIcon from "../../../assest/Image/HomeChef/backIcon.svg"
 
 const GetCode = () => {
   const classes = useStyles();
@@ -9,6 +9,9 @@ const GetCode = () => {
     <>
       <div className={classes.emailContainer}>
         <Grid container className={classes.card}>
+        <a href="http://makitchen.site/">
+            <img className={classes.backIcon} src={BackIcon} alt=""/>
+            </a>
           <h2 className={classes.heading}>Check Your Email</h2>
           <p className={classes.para}>
             We have sent you a link to Please Confirm{" "}

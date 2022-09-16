@@ -4,6 +4,7 @@ import bgImage from "../../../assest/Image/HomeChef/emailBg.png";
 export const useStyles = makeStyles((theme) => ({
   emailContainer: {
     width: "100%",
+    
     height: "100vh",
     backgroundImage: `url(${bgImage})`,
     backgroundRepeat: "no-repeat",
@@ -40,6 +41,7 @@ export const useStyles = makeStyles((theme) => ({
     borderRadius: "5px",
     padding: "45px 20px",
     boxSizing: "border-box",
+    position: "relative",
     [theme.breakpoints.down("xs")]: {
         width: "90%",
         padding: "10px 10px",
@@ -65,6 +67,7 @@ export const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     fontFamily: "inherit",
     fontStyle: "normal",
+    color: "#5A5A5A",
     fontWeight: "400",
     fontSize: "16px",
     marginTop: "20px",
@@ -75,7 +78,7 @@ export const useStyles = makeStyles((theme) => ({
   SubmitButton: {
     background: "#DD7611",
     color: "#FFFFFF",
-    width: "100%",
+    width: "80%",
     padding: "5px",
     border: "none",
     margin: "10px 0px 0px 0px",
@@ -85,5 +88,11 @@ export const useStyles = makeStyles((theme) => ({
       backgroundColor: "#e87906",
 
     },
-  }
+  },
+  backIcon: {
+    position : "absolute",
+    left : 0,
+    background:"#e87906",
+    width:"10%",
+  },
 }));

@@ -27,7 +27,7 @@ const Upload = () => {
               display: "flex",
               justifyContent: "space-between",
               backgroundColor: "#EEEEEE",
-              padding: "10px 20px",
+              padding: "25px 20px",
               }}>
               <div>
                 <Button>Skip</Button>

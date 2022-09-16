@@ -35,6 +35,7 @@ export const useStyles = makeStyles((theme) => ({
     fontSize: "24px",
     color: "#000000",
     margin: "0px 20px",
+    marginTop:"20px",
     borderBottom: "3px solid #EEEEEE",
     padding: "10px 0px",
     [theme.breakpoints.down("xs")]: {

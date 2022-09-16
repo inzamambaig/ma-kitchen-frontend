@@ -31,18 +31,19 @@ export const useStyles = makeStyles((theme) => ({
   },
   card: {
     background: "#FFFFFF",
-    width: "576px",
+    width: "506px",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
     border: "1px solid #DD7611",
     borderRadius: "5px",
-    padding: "45px 40px",
+    padding: "45px 20px",
     boxSizing: "border-box",
+    position: "relative",
     [theme.breakpoints.down("xs")]: {
         width: "90%",
-        padding: "10px 30px",
+        padding: "10px 10px",
       },
   },
   para: {
@@ -50,6 +51,7 @@ export const useStyles = makeStyles((theme) => ({
     fontFamily: "inherit",
     fontStyle: "normal",
     fontWeight: "400",
+    color: "#5A5A5A",
     fontSize: "16px",
     margin: "0px 20px",
     [theme.breakpoints.down("xs")]: {
@@ -68,6 +70,7 @@ export const useStyles = makeStyles((theme) => ({
     fontWeight: "400",
     fontSize: "16px",
     marginTop: "20px",
+    color: "#5A5A5A",
     [theme.breakpoints.down("xs")]: {
         fontSize: "13px",
       },
@@ -75,7 +78,7 @@ export const useStyles = makeStyles((theme) => ({
   SubmitButton: {
     background: "#DD7611",
     color: "#FFFFFF",
-    width: "100%",
+    width: "80%",
     padding: "5px",
     height: "50px",
     border: "none",
@@ -85,5 +88,11 @@ export const useStyles = makeStyles((theme) => ({
       backgroundColor: "#e87906",
 
     },
-  }
+  },
+  backIcon: {
+    position : "absolute",
+    left : 0,
+    background:"#e87906",
+    width:"10%",
+  },
 }));
