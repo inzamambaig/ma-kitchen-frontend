@@ -54,7 +54,8 @@ export const useStyles = makeStyles((theme) => ({
     borderRadius: "5px",
     color: "#DD7611",
     "&:hover": {
-      backgroundColor: "#DD7611",
+      backgroundColor: "#FA4949",
+      border: "1px solid #FA4949",
       color: "#FFFFFF",
     },
     [theme.breakpoints.down("xs")]: {
@@ -81,5 +82,8 @@ export const useStyles = makeStyles((theme) => ({
       marginLeft: "5px",
       fontSize: "12px",
     },
+  },
+  file: {
+    textDecoration: "underline !important",
   },
 }));

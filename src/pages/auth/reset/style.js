@@ -60,7 +60,7 @@ export const useStyles = makeStyles((theme) => ({
       fontSize: "15px",
     },
   },
-  colorPara:{
+  colorPara: {
     color: "#DD7611",
   },
   field: {
@@ -70,7 +70,7 @@ export const useStyles = makeStyles((theme) => ({
     borderRadius: "2px",
     padding: "0px 15px",
     width: "100%",
-    margin:"10px 0px",
+    margin: "10px 0px",
     boxSizing: "border-box",
     "&:placeholder": {
       fontSize: "16px",
@@ -82,6 +82,7 @@ export const useStyles = makeStyles((theme) => ({
   submitBtn: {
     backgroundColor: "#DD7611",
     color: "#FFFFFF",
+    textTransform: "none",
     height: "50px",
     fontSize: "18px",
     width: "100%",

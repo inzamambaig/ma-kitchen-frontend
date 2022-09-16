@@ -9,6 +9,7 @@ const EmailVerfication = () => {
     <>
       <div className={classes.emailContainer}>
         <Grid container className={classes.card}>
+
           <a href="http://makitchen.site/">
             <img className={classes.backIcon} src={BackIcon} alt="" />
           </a>
@@ -18,7 +19,14 @@ const EmailVerfication = () => {
             <a className={classes.link} href="/">
               email@example.com
             </a>{" "}
-            email by clicking the link reset
+          </p>
+          <h2 className={classes.heading}>Check Your Email</h2>
+          <p className={classes.para}>
+            We have sent you a link to{" "}
+            <a className={classes.link} href="/">
+              email@example.com
+            </a>{" "}
+            <br></br>
           </p>
           <span className={classes.para1}>Didn’t recieve any email?</span>
           <Button type="submit" className={classes.SubmitButton}>

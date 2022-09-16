@@ -1,7 +1,10 @@
 import React from "react";
-import { Button , Grid } from "@material-ui/core";
+import { Button, Grid } from "@material-ui/core";
 import { useStyles } from "./style.js";
+<<<<<<< HEAD
 import BackIcon from "../../../assest/Image/HomeChef/backIcon.svg"
+=======
+>>>>>>> e160beb651fd6c1e8a7d0daae73c5d3247eb14ca
 
 const GetCode = () => {
   const classes = useStyles();
@@ -14,15 +17,16 @@ const GetCode = () => {
             </a>
           <h2 className={classes.heading}>Check Your Email</h2>
           <p className={classes.para}>
-            We have sent you a link to Please Confirm{" "}
+            We have sent you a link to{" "}
             <a className={classes.link} href="/">
               email@example.com
-            </a>{" "}
-            email by clicking the link reset
+            </a>
+            <br></br>
+            Please Confirm email by clicking the link reset
           </p>
           <span className={classes.para1}>Didn’t recieve any email?</span>
           <Button type="submit" className={classes.SubmitButton}>
-          Resend 
+            Resend
           </Button>
         </Grid>
       </div>
