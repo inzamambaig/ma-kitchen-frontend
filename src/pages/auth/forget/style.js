@@ -55,12 +55,8 @@ export const useStyles = makeStyles((theme) => ({
     fontSize: "16px",
     textAlign: "center",
     margin: "0px",
-<<<<<<< HEAD
-    marginBottom:"5px",
     color: "#5A5A5A",
-=======
     marginBottom: "5px",
->>>>>>> e160beb651fd6c1e8a7d0daae73c5d3247eb14ca
     [theme.breakpoints.down("xs")]: {
       fontSize: "12px",
     },
