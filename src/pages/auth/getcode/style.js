@@ -78,12 +78,7 @@ export const useStyles = makeStyles((theme) => ({
   SubmitButton: {
     background: "#DD7611",
     color: "#FFFFFF",
-<<<<<<< HEAD
     width: "80%",
-=======
-    textTransform: "none",
-    width: "100%",
->>>>>>> e160beb651fd6c1e8a7d0daae73c5d3247eb14ca
     padding: "5px",
     border: "none",
     margin: "10px 0px 0px 0px",
@@ -95,13 +90,8 @@ export const useStyles = makeStyles((theme) => ({
       border: "1px solid #DD7611",
     },
   },
-<<<<<<< HEAD
   backIcon: {
     position : "absolute",
-    left : 0,
-    background:"#e87906",
-    width:"10%",
+    left : 10,
   },
-=======
->>>>>>> e160beb651fd6c1e8a7d0daae73c5d3247eb14ca
 }));

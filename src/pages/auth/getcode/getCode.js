@@ -1,10 +1,7 @@
 import React from "react";
 import { Button, Grid } from "@material-ui/core";
 import { useStyles } from "./style.js";
-<<<<<<< HEAD
-import BackIcon from "../../../assest/Image/HomeChef/backIcon.svg"
-=======
->>>>>>> e160beb651fd6c1e8a7d0daae73c5d3247eb14ca
+import BackIcon from "../../../assest/Image/HomeChef/backIconblack.svg"
 
 const GetCode = () => {
   const classes = useStyles();
