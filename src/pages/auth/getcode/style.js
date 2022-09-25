@@ -4,7 +4,6 @@ import bgImage from "../../../assest/Image/HomeChef/emailBg.png";
 export const useStyles = makeStyles((theme) => ({
   emailContainer: {
     width: "100%",
-    
     height: "100vh",
     backgroundImage: `url(${bgImage})`,
     backgroundRepeat: "no-repeat",
@@ -26,9 +25,9 @@ export const useStyles = makeStyles((theme) => ({
     fontSize: "30px",
     margin: "0px 0px 20px 0px",
     [theme.breakpoints.down("xs")]: {
-      fontSize: "18px",
-      margin: "0px 0px 10px 0px",
-    },
+        fontSize: "18px",
+        margin: "0px 0px 10px 0px",
+      },
   },
   card: {
     background: "#FFFFFF",
@@ -43,21 +42,22 @@ export const useStyles = makeStyles((theme) => ({
     boxSizing: "border-box",
     position: "relative",
     [theme.breakpoints.down("xs")]: {
-      width: "90%",
-      padding: "10px 10px",
-    },
+        width: "90%",
+        padding: "10px 10px",
+      },
   },
   para: {
     textAlign: "center",
     fontFamily: "inherit",
     fontStyle: "normal",
     fontWeight: "400",
+    color: "#5A5A5A",
     fontSize: "16px",
     margin: "0px 20px",
     [theme.breakpoints.down("xs")]: {
-      fontSize: "13px",
-      margin: "0px 10px",
-    },
+        fontSize: "13px",
+        margin: "0px 10px",
+      },
   },
   link: {
     textDecoration: "none",
@@ -67,31 +67,35 @@ export const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     fontFamily: "inherit",
     fontStyle: "normal",
-    color: "#5A5A5A",
     fontWeight: "400",
     fontSize: "16px",
     marginTop: "20px",
+    color: "#5A5A5A",
     [theme.breakpoints.down("xs")]: {
-      fontSize: "13px",
-    },
+        fontSize: "13px",
+      },
   },
   SubmitButton: {
     background: "#DD7611",
     color: "#FFFFFF",
     width: "80%",
     padding: "5px",
-    border: "none",
-    margin: "10px 0px 0px 0px",
-    boxSizing: "border-box",
     height: "50px",
+    border: "none",
+    margin: "10px 0px 12px 0px",
+    boxSizing: "border-box",
     "&:hover": {
-      color: "#DD7611",
-      backgroundColor: "#FFFFFF",
-      border: "1px solid #DD7611",
+      backgroundColor: "#e87906",
+
     },
   },
   backIcon: {
     position : "absolute",
     left : 10,
+    top : 0,
+    textDecoration: "none",
+    color: "#5A5A5A"
+    // background:"#e87906",
+    // width:"10%",
   },
 }));

@@ -92,6 +92,9 @@ export const useStyles = makeStyles((theme) => ({
   backIcon: {
     position : "absolute",
     left : 10,
+    top : 0,
+    textDecoration: "none",
+    color: "#5A5A5A"
     // background:"#e87906",
     // width:"10%",
   },

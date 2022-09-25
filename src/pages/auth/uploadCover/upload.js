@@ -15,13 +15,13 @@ const Upload = () => {
               <h2 className={classes.heading}>Upload Cover Photo</h2>
             </Grid>
             <Grid item xs={12} className={classes.dropBox}>
-              <DropzoneArea
+            <DropzoneArea
                 acceptedFiles={["image/*"]}
                 onChange={(files) => console.log("Files:", files)}
                 dropzoneText={
                   <h4>
                     Drop & Drop your file here or <br />
-                    <a href="./" className={classes.file}>
+                    <a href="/upload" className={classes.file}>
                       choose file
                     </a>
                   </h4>
