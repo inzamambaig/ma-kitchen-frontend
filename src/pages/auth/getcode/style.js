@@ -4,7 +4,7 @@ import bgImage from "../../../assest/Image/HomeChef/emailBg.png";
 export const useStyles = makeStyles((theme) => ({
   emailContainer: {
     width: "100%",
-    
+
     height: "100vh",
     backgroundImage: `url(${bgImage})`,
     backgroundRepeat: "no-repeat",
@@ -92,9 +92,7 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   backIcon: {
-    position : "absolute",
-    left : 0,
-    background:"#e87906",
-    width:"10%",
+    position: "absolute",
+    left: 10,
   },
 }));

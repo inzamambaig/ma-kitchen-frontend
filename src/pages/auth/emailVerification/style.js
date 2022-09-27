@@ -91,8 +91,8 @@ export const useStyles = makeStyles((theme) => ({
   },
   backIcon: {
     position : "absolute",
-    left : 0,
-    background:"#e87906",
-    width:"10%",
+    left : 10,
+    // background:"#e87906",
+    // width:"10%",
   },
 }));
