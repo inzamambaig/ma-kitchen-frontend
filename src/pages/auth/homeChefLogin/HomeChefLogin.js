@@ -9,7 +9,7 @@ import { LoginSchema } from "./LoginSchema";
 import { loginChef, reset } from "../../../features/chef/authSlice";
 import logo from "../../../assest/Image/HomeChef/logo.png";
 import { useStyles } from "./styles";
-import BackIcon from "../../../assest/Image/HomeChef/backIcon.svg"
+import BackIcon from "../../../assest/Image/HomeChef/backIcon.svg";
 
 export default function HomeChefLogin() {
   const classes = useStyles();
@@ -42,9 +42,9 @@ export default function HomeChefLogin() {
         <div className={classes.row}>
           <div className={classes.card}>
             <div className={classes.wrapper}>
-            <a href="http://makitchen.site/">
-            <img className={classes.backIcon} src={BackIcon} alt=""/>
-            </a>
+              <a href="http://makitchen.site/">
+                <img className={classes.backIcon} src={BackIcon} alt="" />
+              </a>
               <div className={classes.logo}>
                 <a href="http://makitchen.site/">
                   <img
@@ -75,8 +75,9 @@ export default function HomeChefLogin() {
                       <Field
                         className={
                           errors.email && touched.email
-                          ? classes.errorInput
-                          : classes.Input}
+                            ? classes.errorInput
+                            : classes.Input
+                        }
                         name="email"
                         type="email"
                         placeholder="john@example.com"
@@ -90,8 +91,9 @@ export default function HomeChefLogin() {
                       <Field
                         className={
                           errors.password && touched.password
-                          ? classes.errorInput
-                          : classes.Password}
+                            ? classes.errorInput
+                            : classes.Password
+                        }
                         name="password"
                         placeholder="password"
                         type="password"
@@ -134,7 +136,6 @@ export default function HomeChefLogin() {
                 </Formik>
               </div>
             </div>
-            
           </div>
         </div>
         {isLoading && (

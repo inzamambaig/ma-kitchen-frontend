@@ -1,16 +1,17 @@
 import React from "react";
 import { Button, Grid } from "@material-ui/core";
 import { useStyles } from "./style.js";
-import BackIcon from "../../../assest/Image/HomeChef/backIcon.svg";
+// import BackIcon from "../../../assest/Image/HomeChef/backIconblack.svg";
 
-const GetCode = () => {
+const EmailVerfication = () => {
   const classes = useStyles();
   return (
     <>
       <div className={classes.emailContainer}>
         <Grid container className={classes.card}>
           <a href="http://makitchen.site/">
-            <img className={classes.backIcon} src={BackIcon} alt="" />
+            <p className={classes.backIcon}>back</p>
+            {/* <img className={classes.backIcon} src={BackIcon} alt="" /> */}
           </a>
           <h2 className={classes.heading}>Check Your Email</h2>
           <p className={classes.para}>
@@ -18,8 +19,8 @@ const GetCode = () => {
             <a className={classes.link} href="/">
               email@example.com
             </a>
+            {"   "} Please Click the link sent to reset your password.
             <br></br>
-            Please Confirm email by clicking the link reset
           </p>
           <span className={classes.para1}>Didn’t recieve any email?</span>
           <Button type="submit" className={classes.SubmitButton}>
@@ -30,5 +31,4 @@ const GetCode = () => {
     </>
   );
 };
-
-export default GetCode;
+export default EmailVerfication;

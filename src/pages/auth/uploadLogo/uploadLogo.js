@@ -21,7 +21,11 @@ const UploadLogo = () => {
                 dropzoneText={
                   <h4>
                     Drop & Drop your file here or <br />
-                    <a href="./" className={classes.file}>
+                    <a
+                      href="/uploadLogo"
+                      className={classes.file}
+                      onClick={(e) => e.preventDefault()}
+                    >
                       choose file
                     </a>
                   </h4>

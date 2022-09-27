@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Grid } from "@material-ui/core";
 import { useStyles } from "./style.js";
-import BackIcon from "../../../assest/Image/HomeChef/backIconblack.svg";
+// import BackIcon from "../../../assest/Image/HomeChef/backIconblack.svg";
 
 const EmailVerfication = () => {
   const classes = useStyles();
@@ -11,14 +11,15 @@ const EmailVerfication = () => {
         <Grid container className={classes.card}>
 
           <a href="http://makitchen.site/">
-            <img className={classes.backIcon} src={BackIcon} alt="" />
+            <p className={classes.backIcon}>back</p>
+            {/* <img className={classes.backIcon} src={BackIcon} alt="" /> */}
           </a>
           <h2 className={classes.heading}>Check Your Email</h2>
           <p className={classes.para}>
             We have sent you a link to{" "}
             <a className={classes.link} href="/">
               email@example.com
-            </a>{" "}
+            </a>{" "} Please Confirm your email by clicking the link reset.
             <br></br>
           </p>
           <span className={classes.para1}>Didn’t recieve any email?</span>
