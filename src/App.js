@@ -10,7 +10,7 @@ import EmailVer from "./pages/auth/emailVerification/email.js";
 import Location from "./pages/auth/location/location.js";
 import UploadLogo from "./pages/auth/uploadLogo/uploadLogo.js";
 import Reset from "./pages/auth/reset/reset.js";
-import GetCode from "./pages/auth/getcode/getCode.js";
+// import GetCode from "./pages/auth/getcode/getCode.js";
 import Forget from "./pages/auth/forget/forget.js";
 import Upload from "./pages/auth/uploadCover/upload";
 
@@ -21,16 +21,19 @@ function App() {
         <div className="App">
           <Routes>
             <Route exact path="/" element={<HomeChefLogin />} />
+            <Route path="/forget" element={<Forget />} />
+            {/* Sign Up */}
             <Route path="/signup" element={<HomeChefSignUp />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/logout" element={<Logout />} />
             <Route path="/email" element={<EmailVer />} />
+            {/* From Email */}
             <Route path="/location" element={<Location />} />
             <Route path="/uploadLogo" element={<UploadLogo />} />
             <Route path="/upload" element={<Upload />} />
-            <Route path="/forget" element={<Forget />} />
+            {/* Password reset from email */}
             <Route path="/reset" element={<Reset />} />
-            <Route path="/getCode" element={<GetCode />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/logout" element={<Logout />} />
+            {/* <Route path="/getCode" element={<GetCode />} /> */}
           </Routes>
         </div>
       </Router>

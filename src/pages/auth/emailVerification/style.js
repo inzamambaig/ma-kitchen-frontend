@@ -62,6 +62,10 @@ export const useStyles = makeStyles((theme) => ({
   link: {
     textDecoration: "none",
     color: "#167EE6",
+    cursor: "text",
+  },
+  backLink: {
+    cursor: "pointer",
   },
   para1: {
     textAlign: "center",

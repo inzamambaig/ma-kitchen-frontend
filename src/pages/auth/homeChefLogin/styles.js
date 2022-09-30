@@ -22,7 +22,8 @@ export const useStyles = makeStyles((theme) => ({
   card: {
     margin: "20px",
     // backgroundColor: "#08080878",
-    background: "linear-gradient(114.83deg, rgba(34, 34, 34, 0.2) 1.85%, rgba(0, 0, 0, 0.2) 101.31%)",
+    background:
+      "linear-gradient(114.83deg, rgba(34, 34, 34, 0.2) 1.85%, rgba(0, 0, 0, 0.2) 101.31%)",
     borderRadius: "12px",
   },
 
@@ -66,7 +67,7 @@ export const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("md")]: {
       padding: " 3px 0px",
       width: "90%",
-      margin : "0px auto",
+      margin: "0px auto",
     },
   },
   Input: {
@@ -94,7 +95,7 @@ export const useStyles = makeStyles((theme) => ({
     paddingLeft: "16px",
     // marginBottom: "7px",
   },
-  
+
   Label: {
     color: theme.palette.common.white,
     fontStyle: "normal",
@@ -144,6 +145,7 @@ export const useStyles = makeStyles((theme) => ({
     fontWeight: "400",
     fontSize: "13px",
     lineHeight: "14px",
+    textDecoration: "none",
   },
 
   SignUpButton: {
@@ -164,7 +166,7 @@ export const useStyles = makeStyles((theme) => ({
     cursor: "pointer",
   },
   backIcon: {
-    position : "absolute",
-    left : 0,
+    position: "absolute",
+    left: 0,
   },
 }));

@@ -36,9 +36,9 @@ const create = async ({
     address: address,
   });
 
-  if (res.data) {
-    localStorage.setItem("chef", JSON.stringify(res.data));
-  }
+  // if (res.data) {
+  //   localStorage.setItem("chef", JSON.stringify(res.data));
+  // }
 
   return res.data;
 };

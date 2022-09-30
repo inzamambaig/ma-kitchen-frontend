@@ -28,8 +28,9 @@ export default function HomeChefSignUp() {
       toast.error(message);
     }
 
+    // Keeps redirecting to email
     if (isSuccess || chef) {
-      navigate("/dashboard");
+      navigate("/email");
     }
 
     dispatch(reset());
@@ -38,6 +39,8 @@ export default function HomeChefSignUp() {
   const handleSignup = async (values) => {
     await dispatch(createChef(values));
   };
+
+  console.log(handleSignup);
 
   return (
     <>
@@ -97,9 +100,12 @@ export default function HomeChefSignUp() {
                     </span>
                   </div>
 
-                  <div className={classes.LoginForm} style={{ 
-                    marginTop: "20px",
-                   }}>
+                  <div
+                    className={classes.LoginForm}
+                    style={{
+                      marginTop: "20px",
+                    }}
+                  >
                     <Formik
                       initialValues={{
                         firstname: "",

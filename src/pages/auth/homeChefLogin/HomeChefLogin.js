@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Button } from "@material-ui/core";
 import { Formik, Form, Field } from "formik";
@@ -113,9 +113,10 @@ export default function HomeChefLogin() {
                           />
                           Stay Signed In
                         </span>
-                        <span className={classes.ForgotPass}>
+                        <Link className={classes.ForgotPass} to="/forget">
+                          {/* here */}
                           Forgot Password?
-                        </span>
+                        </Link>
                       </div>
                       <Button type="submit" className={classes.SubmitButton}>
                         Next
