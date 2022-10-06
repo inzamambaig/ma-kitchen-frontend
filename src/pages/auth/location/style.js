@@ -66,6 +66,24 @@ export const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     boxSizing: "border-box",
   },
+  errorInput: {
+    // width: "95%",
+    // padding: "12px 0px",
+    // borderRadius: "2px",
+    // outline: "none",
+    border: "2px solid red",
+    width: "100%",
+    boxSizing: "border-box",
+    height: "2rem",
+    padding: "0px 10px",
+    "&:placeholder": {
+      fontFamily: "inherit",
+      fontStyle: "normal",
+      fontWeight: "400",
+      fontSize: "16px",
+    },
+    // paddingLeft: "16px",
+  },
 
   field: {
     width: "100%",

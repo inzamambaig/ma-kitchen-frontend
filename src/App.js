@@ -31,6 +31,7 @@ function App() {
             <Route path="/upload" element={<Upload />} />
             {/* Password reset from email */}
             <Route path="/reset" element={<Reset />} />
+            {/* Reset redirect to login */}
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/logout" element={<Logout />} />
             {/* <Route path="/getCode" element={<GetCode />} /> */}

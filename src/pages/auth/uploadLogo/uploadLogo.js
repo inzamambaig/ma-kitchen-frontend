@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { DropzoneArea } from "material-ui-dropzone";
 import { Button, Grid } from "@material-ui/core";
 import { useStyles } from "./style.js";
@@ -6,6 +7,7 @@ import "./style.css";
 
 const UploadLogo = () => {
   const classes = useStyles();
+  const navigate = useNavigate();
   return (
     <>
       <div className={classes.conatiner}>
@@ -44,7 +46,7 @@ const UploadLogo = () => {
               }}
             >
               <div>
-                <Button>Skip</Button>
+                <Button onClick={() => navigate("/dashboard")}>Skip</Button>
               </div>
               <div>
                 <Button className={classes.discard}>Discard</Button>

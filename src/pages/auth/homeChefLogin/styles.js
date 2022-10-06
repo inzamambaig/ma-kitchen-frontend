@@ -96,7 +96,7 @@ export const useStyles = makeStyles((theme) => ({
     // marginBottom: "7px",
   },
 
-  Label: {
+  label: {
     color: theme.palette.common.white,
     fontStyle: "normal",
     fontWeight: 600,

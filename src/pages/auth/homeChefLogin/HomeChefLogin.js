@@ -71,7 +71,7 @@ export default function HomeChefLogin() {
                 >
                   {({ errors, touched }) => (
                     <Form className={classes.FormikLoginForm}>
-                      <label className={classes.Label}>Email</label>
+                      <label className={classes.label}>Email</label>
                       <Field
                         className={
                           errors.email && touched.email
@@ -87,7 +87,7 @@ export default function HomeChefLogin() {
                           {errors.email}
                         </div>
                       ) : null} */}
-                      <label className={classes.Label}>Password</label>
+                      <label className={classes.label}>Password</label>
                       <Field
                         className={
                           errors.password && touched.password
